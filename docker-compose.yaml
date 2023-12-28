@@ -1,4 +1,4 @@
-version: "3.8"
+.version: "3.8"
 services:
   mongodb:
     container_name: mongodb
@@ -36,7 +36,7 @@ services:
     image: redis:latest
     restart: always
     ports:
-      - "19081:19081"
+      - "6379:6379"
     command: redis-server --save 20 1 --loglevel warning
     volumes:
       - ./reids:/data
@@ -52,20 +52,20 @@ services:
       redis:
         condition: service_started
     ports:
-      - 4500:3000
+      - 4500:4500
     environment:
       # NODE_ENV: production
       CONNECTION_STRING: mongodb://mongodb:27017/project-games
       PGHOST: localhost
       PGPORT: 5432
       PGUSER: postgres
-      PGPASSWORD: 1995
+      PGPASSWORD: postgres
       PGNAME: postgres
       PGDATABASE: project-games-users
       REDIS_HOST: redis
-      REDIS_PORT: 19081
+      REDIS_PORT: 6379
       JWT_SECRET: "SECRET"
-      EXPRESSPORT: 3000
+      EXPRESSPORT: 4500
     links:
       - pg
       - redis
