@@ -9,6 +9,11 @@ services:
     command: --wiredTigerCacheSizeGB 1.5
     volumes:
       - mongodata:/data/db
+    healthcheck:
+      test: ["CMD", "mongo", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 25s
+      retries: 3
   pg:
     container_name: pg
     image: postgres:14.1-alpine
