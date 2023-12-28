@@ -78,7 +78,7 @@ services:
       REDIS_HOST: redis
       REDIS_PORT: 6379
       JWT_SECRET: "SECRET"
-      EXPRESSPORT: 4500
+      # EXPRESSPORT: 4500
     links:
       - pg
       - redis
