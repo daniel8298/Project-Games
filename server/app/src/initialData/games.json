@@ -1,0 +1,30 @@
+[
+  {
+    "name": "GTA V",
+    "genre": "Action",
+    "platforms": "PC",
+    "description": "is an action game developed by Rockstar North and published by Rockstar Games. This is the eighth game (plot-wise) in the Grand Theft Auto game series",
+    "contactNumber": "123-456-7890",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/he/thumb/d/d6/GTA_V_COVER.jpg/800px-GTA_V_COVER.jpg",
+    "imageAlt": "Cover art for Awesome Game",
+    "area": {
+      "areaCountry": "Darom",
+      "city": "Ashdod",
+      "street": "jerusalem 14"
+    }
+  },
+  {
+    "name": "GTA IV",
+    "genre": "Action",
+    "platforms": "PC",
+    "description": "is an action game developed by Rockstar North and published by Rockstar Games. This is the eighth game (plot-wise) in the Grand Theft Auto game series",
+    "contactNumber": "123-456-7890",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/he/thumb/d/d6/GTA_V_COVER.jpg/800px-GTA_V_COVER.jpg",
+    "imageAlt": "Cover art for Awesome Game",
+    "area": {
+      "areaCountry": "Mercaz",
+      "city": "Ptach Tikav",
+      "street": "hazira 13"
+    }
+  }
+]
