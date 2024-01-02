@@ -1,11 +1,15 @@
 import Header from "./features/global/layout/Header/Header";
 import RouterDOM from "./features/global/router/RouterDOM";
 import Footer from "./features/global/layout/Footer";
-import { ThemeProvider } from "@mui/material/styles";
 import { useAppSelector } from "./store/hooks";
 import { themeDark, themeLight } from "./features/global/themes/themes";
 import { Box, Container } from "@mui/material";
 import { CssBaseline } from "@mui/material";
+import Layout from "./features/global/layout/Layout";
+import RouterDom from "./features/global/router/RouterDOM";
+import { ThemeProvider } from "styled-components";
+import GlobalStyles from "./features/global/styles/Global";
+
 // import { pullFromLocalStorage } from "./features/cart/cartSlice";
 
 const App = () => {
@@ -15,8 +19,10 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={themeMode ? themeLight : themeDark}>
-        <CssBaseline />
-        <Container sx={{ display: "flex", justifyContent: "center" }}>
+        <GlobalStyles />
+        {/* <ThemeProvider theme={themeMode ? themeLight : themeDark}> */}
+        {/* <CssBaseline /> */}
+        {/* <Container sx={{ display: "flex", justifyContent: "center" }}>
           <Header />
           <Box
             className="product-grid"
@@ -30,8 +36,12 @@ const App = () => {
             <RouterDOM />
           </Box>
           <Footer />
-        </Container>
+        </Container> */}
+        <Layout>
+          <RouterDom />
+        </Layout>
       </ThemeProvider>
+      {/* </ThemeProvider> */}
     </>
   );
 };

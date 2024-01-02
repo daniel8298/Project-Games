@@ -12,6 +12,7 @@ import GameDetailsPage from "../../games/pages/GameDetailsPage";
 import SignInPage from "../../users/pages/SignInPage";
 import SignUpPage from "../../users/pages/SignUpPage";
 import SearchPage from "../../games/pages/SearchPage";
+import ExchangeGamesPage from "../../exchangeGames/pages/ExchangeGamesPage";
 const RouterDom = () => {
   return (
     <Routes>
@@ -20,6 +21,7 @@ const RouterDom = () => {
       <Route path="/store/signup" element={<SignUpPage />} />
       <Route path="/store/search" element={<SearchPage />} />
       <Route path="/store/home/:gameId" element={<GameDetailsPage />} />
+      <Route path="/store/exchangeGamesPage" element={<ExchangeGamesPage />} />
       {/* <Route path="/store/home/games" element={<GamesPage />} /> */}
       <Route path="/store/home/store/map" element={<StorePage />} />
       {/* <Route path="/store/order-details/:userId" element={<OrderDetails />} /> */}
