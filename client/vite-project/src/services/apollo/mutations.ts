@@ -1,69 +1,79 @@
 import { gql } from "@apollo/client";
 
 export const MUTATIONS_USER_SIGNUP = gql`
-  mutation SignUpUser($input: RegisterUserInput) {
-    signUpUser(input: $input) {
+  mutation SignUpUser($user: RegisterUserInput) {
+    signUpUser(user: $user) {
+      _id
       email
-      isAdmin
+      password
     }
   }
 `;
 export const MUTATIONS_USER_SIGNIN = gql`
-  mutation SignInUser($input: LoginUserInput) {
-    SignInUser(input: $input) {
+  mutation SignInUser($user: LoginUserInput) {
+    signInUser(user: $user) {
       token
     }
   }
 `;
-export const REGISTER_ORDER = gql`
-  mutation RegisterOrder($order: OrderFromClient!) {
-    registerOrder(order: $order) {
+export const MUTATIONS_EDIT_GAME = gql`
+  mutation EditGame($editGameId: ID, $game: EditGameInput) {
+    editGame(id: $editGameId, game: $game) {
+      area {
+        areaCountry
+        city
+        street
+      }
       _id
-      cartItems {
-        description
-        price
-        name
-        productId
-        quantity
-      }
-      orderTime
-      price
-      shippingDetails {
-        address
-        contactNumber
-        orderType
-      }
-      status
+      contactNumber
+      dateGame
+      description
+      genre
+      imageAlt
+      imageUrl
+      name
+      platforms
     }
   }
 `;
 
-export const MUTATION_CANCEL = gql`
-  mutation CancelProductsInStock($cart: [ProductToCheck!]) {
-    cancelProductsInStock(cart: $cart)
+export const MUTATION_ADD_GAME = gql`
+  mutation AddGame($game: AddGameInput) {
+    addGame(game: $game) {
+      _id
+      area {
+        areaCountry
+        city
+        street
+      }
+      contactNumber
+      dateGame
+      description
+      genre
+      imageAlt
+      imageUrl
+      name
+      platforms
+    }
   }
 `;
-export const MUTATION_CHECK_IN_STOCK = gql`
-  mutation CheckProductsInStock($cart: [ProductToCheck!]) {
-    checkProductsInStock(cart: $cart) {
-      inStock {
-        productId
-        requiredQuantity
+export const MUTATION_DELETE_GAME = gql`
+  mutation DeleteGame($deleteGameId: ID) {
+    deleteGame(id: $deleteGameId) {
+      _id
+      area {
+        areaCountry
+        city
+        street
       }
-      notInStock {
-        product {
-          id
-          name
-          salePrice
-          quantity
-          description
-          category
-          discountPercentage
-          imageUrl
-          imageAlt
-        }
-        requiredQuantity
-      }
+      contactNumber
+      dateGame
+      description
+      genre
+      imageAlt
+      imageUrl
+      name
+      platforms
     }
   }
 `;

@@ -10,7 +10,7 @@ import {
   // setLocalStorageToken,
 } from "../../services/localStorageService";
 import { useAppDispatch } from "../../../../store/hooks";
-import { setToken } from "../../../token/tokenSlice";
+import { setToken } from "../../../global/token/tokenSlice";
 // import { setLoggedUser } from "../../usersSlice";
 import { SignUpRequest } from "../../services/usersRequests";
 // import { useToken } from "../../../token/hooks/useToken";

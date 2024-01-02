@@ -1,12 +1,12 @@
 import { Button } from "@mui/material";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { SignInUpButtonInterface } from "../../interfaces/SignInUpButtonInterface";
 import { useNavigate } from "react-router-dom";
 import { useAlerts } from "../../hooks/useAlerts";
 import SignInUpAlert from "../alert/SignInUpAlert";
 import { SignUpRequest } from "../../services/usersRequests";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
-import getAllGames from "../../../games/services/getAllGames";
+// import getAllGames from "../../../games/services/getAllGames";
 const SignUpButton: FC<SignInUpButtonInterface> = ({
   text,
   isValid,

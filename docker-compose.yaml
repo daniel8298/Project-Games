@@ -14,6 +14,7 @@ services:
       interval: 10s
       timeout: 25s
       retries: 3
+
   pg:
     container_name: pg
     image: postgres:14.1-alpine
@@ -55,14 +56,8 @@ services:
       - 4500:4500
     environment:
       # NODE_ENV: production
-      POSTGRESQL_CONNECTION_STRING: postgresql://postgres:postgres@pg:5432/project-games-users
-      MONGODB_URI: mongodb://127.0.0.1:27017/project-games
-      # PGHOST: localhost
-      # PGPORT: 5432
-      # PGUSER: postgres
-      # PGPASSWORD: postgres
-      # PGNAME: postgres
-      # PGDATABASE: project-games-users
+      POSTGRESQL_CONNECTION_STRING: postgresql://postgres:postgres@pg:5432/project_games
+      MONGODB_URI: mongodb://mongodb:27017/project-games
       USER_EMAIL: store.app.yad2@gmail.com
       USER_PASS: Store-pass1
       CLIENT_ID: 1044052224045-vonv7v5it54l67u4o6fvt23cksk1it7o.apps.googleusercontent.com
@@ -74,16 +69,14 @@ services:
       BASE_URL: "http://localhost:5000/api/games"
       FASTMAIL_EMAIL: "danielIfrach@fastmail.com"
       FASTMAIL_PASSWORD: "qqr73lyesnhgfng3"
-      PGDATABASE: project-games-users
       REDIS_HOST: redis
       REDIS_PORT: 6379
       JWT_SECRET: "SECRET"
-      # EXPRESSPORT: 4500
     links:
       - pg
       - redis
-      - mongodb
       - client
+      - mongodb
     develop:
       watch:
         - action: rebuild

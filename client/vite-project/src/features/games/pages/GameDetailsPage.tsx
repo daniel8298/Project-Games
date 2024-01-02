@@ -1,27 +1,27 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { Box, CssBaseline } from "@mui/material";
-import SpinnerComponent from "../../spinner/components/WaitingComponent";
-import NotFoundError from "../../router/NotFoundError";
+import { Box, Container, CssBaseline } from "@mui/material";
+import SpinnerComponent from "../../global/spinner/components/WaitingComponent";
+import NotFoundError from "../../global/router/NotFoundError";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import getProduct from "../services/getGame";
 import GameDetailsCard from "../components/GameDetails/GameDetailsCard";
+import getGame from "../services/getGame";
 
-const ProductDetailsPage = () => {
+const GameDetailsPage = () => {
   const { gameId } = useParams();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { error, pending, game } = useAppSelector((store) => store.games);
 
   useEffect(() => {
-    dispatch(getProduct(gameId as string));
+    dispatch(getGame(gameId as string));
   }, [game]);
   if (pending) return <SpinnerComponent />;
   if (!game) return <NotFoundError message="game in not found" />;
   if (error) navigate("/store/notFound");
 
   return (
-    <>
+    <Container>
       <CssBaseline />
       <Box
         sx={{
@@ -31,7 +31,7 @@ const ProductDetailsPage = () => {
         }}
       ></Box>
       <GameDetailsCard game={game} />;
-    </>
+    </Container>
   );
 };
-export default ProductDetailsPage;
+export default GameDetailsPage;

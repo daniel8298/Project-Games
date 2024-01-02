@@ -1,18 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import usersSlice from "../features/users/usersSlice";
-// import cartSlice from "../features/cart/cartSlice";
-import themeModeSlice from "../features/themes/themeModeSlice";
-import axiosInterceptors from "./services/axiosInterceptors";
-import tokenSlice from "../features/token/tokenSlice";
+import themeModeSlice from "../features/global/themes/themeModeSlice";
+import axiosInterceptors from "./middlewares/axiosInterceptors";
+import tokenSlice from "../features/global/token/tokenSlice";
 import gamesSlice from "../features/games/gamesSlice";
-// import orderSlice from "../order/orderSlice";
 
 export const store = configureStore({
   reducer: {
     games: gamesSlice,
-    // order: orderSlice,
     users: usersSlice,
-    // cart: cartSlice,
     themeMode: themeModeSlice,
     token: tokenSlice,
   },

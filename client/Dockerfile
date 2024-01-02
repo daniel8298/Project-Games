@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY ./vite-project/package*.json .
 RUN npm i
+RUN npm install -D typescript
 
 COPY ./vite-project .
 

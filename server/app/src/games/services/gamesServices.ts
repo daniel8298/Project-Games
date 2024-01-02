@@ -1,13 +1,17 @@
 import { redisClient } from "../../redis/client/client";
-import { getCachedGameById, getCachedGames } from "../cache/gamesCache";
+import {
+  getCachedGameById,
+  getCachedGames,
+  getCachedGamesByUserId,
+} from "../cache/gamesCache";
 import {
   addGameToGames,
   deleteGameById,
   editGameById,
   getAllGamesFromMongoDB,
 } from "../dal/gamesDal";
-import { GameInterface } from "../types/types";
 import { RedisJSON } from "@redis/json/dist/commands";
+import GameInterface from "../interfaces/GameInterface";
 
 export const getGames = async () => {
   const cachedGames = await getCachedGames();
@@ -32,6 +36,18 @@ export const getGame = async (_: unknown, { id }: { id: string }) => {
     const cachedGame = await getCachedGameById(id);
     cachedGame ? console.log("game from cached") : console.log("not find game");
     return cachedGame;
+  } catch (error) {
+    if (error instanceof Error) console.log(error.message);
+    return null;
+  }
+};
+export const getGamesByUserId = async (_: unknown, { id }: { id: string }) => {
+  try {
+    const cachedGames = await getCachedGamesByUserId(id);
+    cachedGames
+      ? console.log("games from cached")
+      : console.log("not find games");
+    return cachedGames;
   } catch (error) {
     if (error instanceof Error) console.log(error.message);
     return null;

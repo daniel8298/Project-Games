@@ -1,7 +1,7 @@
 import { readJsonFileGames } from "../../initialData/initialData";
 import { redisClient } from "../../redis/client/client";
+import GameInterface from "../interfaces/GameInterface";
 import { Game } from "../models/mongoose/GamesSchema";
-import { GameInterface } from "../types/types";
 
 export const getAllGamesFromJSON = async () => {
   try {

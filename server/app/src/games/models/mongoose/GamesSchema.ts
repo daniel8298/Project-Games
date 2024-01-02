@@ -9,11 +9,12 @@ export const GamesSchema = new Schema({
   contactNumber: String,
   imageUrl: String,
   imageAlt: String,
-  area: {
+  address: {
     areaCountry: String,
     city: String,
     street: String,
   },
+  userId: String,
 });
 
 export const Game = mongoose.model("game", GamesSchema);

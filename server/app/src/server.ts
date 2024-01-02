@@ -50,17 +50,14 @@ app.use(cors);
 app.use(handleErrorMiddleware);
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, async () => {
+httpServer.listen(PORT, async () => {
   console.log(chalk.blueBright(`Server listening on port: ${PORT}`));
 
   connectToApolloServer()
     .then(async (message) => {
       app.use("/graphql", cors, BodyParser.json(), expressMiddleware(server));
-
-      httpServer.listen(5000, () => {
-        console.log(chalk.cyanBright(`http://localhost:5000/graphql`));
-      });
       console.log(chalk.yellowBright(message));
+      console.log(chalk.cyanBright(`http://localhost:${PORT}/graphql`));
     })
     .catch((error) =>
       console.log(chalk.redBright("Connect to Apollo Error: ", error.message))

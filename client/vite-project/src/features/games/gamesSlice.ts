@@ -5,15 +5,15 @@ import GameInterface from "./interfaces/GameInterface";
 import getAllGames from "./services/getAllGames";
 
 interface InitialState {
-  productsBySale: number[];
   pending: boolean;
   error: string | SerializedError;
   games: GameInterface[];
   game: GameInterface | null;
+  platforms: GameInterface[];
 }
 
 const initialState: InitialState = {
-  productsBySale: [],
+  platforms: [],
   pending: false,
   error: "",
   games: [],
@@ -24,8 +24,14 @@ export const gamesSlice = createSlice({
   name: "games",
   initialState,
   reducers: {
-    setBySale: (state, action: PayloadAction<number[]>) => {
-      state.productsBySale = action.payload;
+    filterGames(
+      state,
+      action: PayloadAction<{ games: GameInterface[]; platform: string }>
+    ) {
+      state.platforms = action.payload.games;
+      const { games, platform } = action.payload;
+      state.platforms = games.filter((game) => game.platforms === platform);
+      state.platforms = [...state.platforms];
     },
   },
   extraReducers(builder) {
@@ -60,5 +66,5 @@ export const gamesSlice = createSlice({
   },
 });
 
-export const { setBySale } = gamesSlice.actions;
+export const { filterGames } = gamesSlice.actions;
 export default gamesSlice.reducer;

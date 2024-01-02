@@ -21,6 +21,7 @@ interface GameInterface {
     city: string;
     street: string;
   };
+  userId: string;
 }
 
 export default GameInterface;

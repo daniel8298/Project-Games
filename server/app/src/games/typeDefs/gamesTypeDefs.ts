@@ -1,7 +1,7 @@
 export const gameTypesDefs = `
 scalar Date
 
-  type Area {
+  type Address {
     areaCountry: String
     city: String
     street: String
@@ -17,7 +17,7 @@ scalar Date
     imageUrl: String
     imageAlt: String
     dateGame: Date
-    area: Area
+    address: Address
   }
 
   input EditGameInput {
@@ -28,7 +28,7 @@ scalar Date
     contactNumber: String
     imageUrl: String
     imageAlt: String
-    area: AreaInput
+    address: AddressInput
   }
   
   input AddGameInput {
@@ -39,10 +39,10 @@ scalar Date
     contactNumber: String
     imageUrl: String
     imageAlt: String
-    area: AreaInput
+    address: AddressInput
   }
 
-  input AreaInput {
+  input AddressInput {
     areaCountry: String
     city: String
     street: String
@@ -53,6 +53,7 @@ scalar Date
 export const gamesTypeDefsQueries = `
   getGames: [Game]
   getGame(id:ID): Game
+  getGamesByUserId(id: String): [Game]
 `;
 export const gamesTypeDefsMutations = `
   editGame(id: ID ,game: EditGameInput): Game
