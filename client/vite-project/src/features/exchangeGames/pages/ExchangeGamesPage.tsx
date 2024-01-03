@@ -1,13 +1,10 @@
 import { Button } from "../../global/styles/Button.styled";
-import {
-  Container,
-  ContainerWithFlex,
-} from "../../global/styles/Container.styled";
+import { ContainerWithFlex } from "../../global/styles/Container.styled";
 import { Flex } from "../../global/styles/Flex.styled";
 import { Logo } from "../../global/styles/Header.styled";
 import CardAdmin from "../components/CardAdmin";
 import CardUser from "../components/CardUser";
-// import { Input, Select } from "../styles/Exchange.styled";
+import { FlexSelectAndButton, Select } from "../styles/Exchange.styled";
 
 const ExchangeGamesPage = () => {
   return (
@@ -22,19 +19,32 @@ const ExchangeGamesPage = () => {
         {"  "}
         Games
       </h1>
-      {/* <Select>
-        <option value="volvo">Volvo</option>
-        <option value="saab">Saab</option>
-        <option value="mercedes">Mercedes</option>
-        <option value="audi">Audi</option>
-      </Select> */}
 
       <Flex>
+        <FlexSelectAndButton>
+          <Select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </Select>
+          <Button bg="black" color="white">
+            Add Game
+          </Button>
+        </FlexSelectAndButton>
         <CardAdmin />
         <CardUser />
-
-        {/* </ContainerFlex> */}
-        {/* <Input /> */}
+        <FlexSelectAndButton>
+          <Select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </Select>
+          <Button bg="black" color="white">
+            Add Game
+          </Button>
+        </FlexSelectAndButton>
       </Flex>
       <Button>Submit</Button>
     </ContainerWithFlex>

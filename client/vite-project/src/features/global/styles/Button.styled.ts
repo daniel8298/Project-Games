@@ -13,6 +13,7 @@ export const Button = styled.button<ButtonProps>`
   font-size: 16px;
   font-weight: 700;
   padding: 10px 30px;
+  margin: 10px;
   background-color: ${({ bg }) => bg || "skyblue"};
   color: ${({ color }) => color || "#333"};
 

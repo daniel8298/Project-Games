@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyleHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.header};
-  padding: 20px 0;
+  padding: 7px 0;
 `;
 export const Nav = styled.nav`
   display: flex;

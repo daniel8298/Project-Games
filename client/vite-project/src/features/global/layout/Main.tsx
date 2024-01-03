@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Container, ContainerWithFlex } from "../styles/Container.styled";
+import { Container } from "../styles/Container.styled";
 
 type MainProps = { children: JSX.Element | JSX.Element[] };
 
