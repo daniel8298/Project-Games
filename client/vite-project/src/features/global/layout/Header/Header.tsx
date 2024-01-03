@@ -12,8 +12,9 @@ import { TokenType } from "../types/token";
 import { useEffect } from "react";
 import SideBar from "../../../games/components/SideBar";
 
-import { Container, ContainerFlex } from "../../styles/Container.styled";
+import { Container } from "../../styles/Container.styled";
 import { Logo, Nav, StyleHeader } from "../../styles/Header.styled";
+import { Flex } from "../../styles/Flex.styled";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -43,21 +44,20 @@ const Header = () => {
               }}
             />
           </Container>
-          <ContainerFlex>
-            {decodedToken === null ? (
-              <HeaderSignInButton />
-            ) : (
-              <HeaderLogOutButton />
-            )}
-            <IconButton
-              onClick={() => {
-                dispatch(setThemeMode(!themeMode));
-              }}
-            >
-              {themeMode ? <DarkModeIcon /> : <Brightness7Icon />}
-            </IconButton>
-            <SideBar />
-          </ContainerFlex>
+
+          {decodedToken === null ? (
+            <HeaderSignInButton />
+          ) : (
+            <HeaderLogOutButton />
+          )}
+          <IconButton
+            onClick={() => {
+              dispatch(setThemeMode(!themeMode));
+            }}
+          >
+            {themeMode ? <DarkModeIcon /> : <Brightness7Icon />}
+          </IconButton>
+          <SideBar />
         </Nav>
 
         {/* {decodedToken && <ShowOrdersHistory />} */}

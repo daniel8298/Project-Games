@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 1000px;
+  width: 1500px;
   max-width: 100%;
-  padding: 0 20px;
+  padding: 20px;
   margin: 0 auto;
 `;
-export const ContainerFlex = styled.div`
-  width: 1000px;
+export const ContainerWithFlex = styled.div`
+  width: 1500px;
   max-width: 100%;
-  padding: 0 20px;
+  padding: 20px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
 `;

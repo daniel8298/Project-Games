@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
+import { Container, ContainerWithFlex } from "../styles/Container.styled";
+import { FooterStyled, Span } from "../styles/Footer.styled";
 
 const Footer = () => {
   const [currentTime, setCurrentTime] = useState(getFormattedTime());
@@ -22,25 +23,11 @@ const Footer = () => {
   }
 
   return (
-    <Box
-      component="footer"
-      sx={{
-        color: "black",
-        backgroundColor: "#22242d",
-        padding: "10px 0",
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        width: "100%",
-        borderRadius: "3px",
-      }}
-    >
-      <Container maxWidth="md">
-        <Typography minHeight={"30px"} variant="body2" color={"white"}>
-          © {new Date().getFullYear()} Local Time: {currentTime}
-        </Typography>
-      </Container>
-    </Box>
+    <FooterStyled>
+      <ContainerWithFlex>
+        Games Exchange © {new Date().getFullYear()} Local Time: {currentTime}
+      </ContainerWithFlex>
+    </FooterStyled>
   );
 };
 
