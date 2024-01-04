@@ -1,8 +1,24 @@
+import { useState } from "react";
 import { HorizontalLine, StyledCard } from "../../global/styles/Card.styled";
 import { Logo } from "../../global/styles/Header.styled";
 import { Checkbox, Image } from "../styles/Exchange.styled";
 
-const CardAdmin = () => {
+export type Game = {
+  name: string;
+  id: string;
+};
+
+export type GamesProps = {
+  games: Game[];
+  handleGameDelete: (id: string) => void;
+};
+
+const CardAdmin = ({ games, handleGameDelete }: GamesProps) => {
+  // const [games, setGames] = useState([
+  //   { name: "Gta V", id: "1" },
+  //   { name: "Call Of Duty", id: "2" },
+  // ]);
+
   return (
     <StyledCard>
       <div>
@@ -15,25 +31,21 @@ const CardAdmin = () => {
       <HorizontalLine />
       <div>
         <h4>Games For Exchange</h4>
-        <label>
-          <Logo
-            src="../../../../../public/delete-svgrepo-com.svg"
-            alt="delete"
-            width={"25px"}
-          />
-          <Checkbox type="checkbox" />
-          Gta V
-        </label>
-        <br />
-        <label>
-          <Logo
-            src="../../../../../public/delete-svgrepo-com.svg"
-            alt="delete"
-            width={"25px"}
-          />
-          <Checkbox type="checkbox" />
-          Call Of Duty
-        </label>
+        {games.map((game) => (
+          <div key={game.id}>
+            <label>
+              <Logo
+                src="../../../../../public/delete-svgrepo-com.svg"
+                alt="delete"
+                width={"25px"}
+                onClick={() => handleGameDelete(game.id)}
+              />
+              <Checkbox type="checkbox" />
+              {game.name}
+            </label>
+            {<br />}
+          </div>
+        ))}
       </div>
     </StyledCard>
   );
