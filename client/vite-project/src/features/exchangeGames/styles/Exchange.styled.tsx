@@ -15,7 +15,6 @@ export const Image = styled.img`
   object-fit: cover;
   object-position: center;
   display: block;
-  /* margin-bottom: 100px; */
 `;
 export const Checkbox = styled.input`
   margin: 0 10px 0 30px;

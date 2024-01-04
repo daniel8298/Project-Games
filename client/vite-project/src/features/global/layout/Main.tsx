@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Container } from "../styles/Container.styled";
+import { Container } from "../styles/components/Container.styled";
 
 type MainProps = { children: JSX.Element | JSX.Element[] };
 

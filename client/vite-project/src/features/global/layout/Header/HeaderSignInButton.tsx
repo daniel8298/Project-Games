@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { Button } from "../../styles/Button.styled";
+import { Button } from "../../styles/components/Button.styled";
 
 const HeaderSignInButton = () => {
   const navigate = useNavigate();

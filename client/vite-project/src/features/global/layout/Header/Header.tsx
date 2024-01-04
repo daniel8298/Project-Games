@@ -4,18 +4,16 @@ import HeaderSignInButton from "./HeaderSignInButton";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
-import { setThemeMode } from "../../themes/themeModeSlice";
 import HeaderLogOutButton from "./HeaderLogOutButton ";
 import { setDecodedToken } from "../../token/tokenSlice";
 import { jwtDecode } from "jwt-decode";
 import { TokenType } from "../types/token";
 import { useEffect } from "react";
-import SideBar from "../../../games/components/SideBar";
-
-import { Container } from "../../styles/Container.styled";
-import { Logo, Nav, StyleHeader } from "../../styles/Header.styled";
-import { Flex } from "../../styles/Flex.styled";
+// import SideBar from "../../../games/components/SideBar";
 import { FlexButtons } from "../../../exchangeGames/styles/Exchange.styled";
+import { Container } from "../../styles/components/Container.styled";
+import { Logo, Nav, StyleHeader } from "../../styles/components/Header.styled";
+import { setThemeMode } from "../../styles/themes/themeModeSlice";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -59,9 +57,9 @@ const Header = () => {
             {/* <SideBar /> */}
           </FlexButtons>
         </Nav>
-      </Container>
 
-      {/* {decodedToken && <ShowOrdersHistory />} */}
+        {/* {decodedToken && <ShowOrdersHistory />} */}
+      </Container>
     </StyleHeader>
   );
 };

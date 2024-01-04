@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import { Container, ContainerWithFlex } from "../styles/Container.styled";
-import { FooterStyled, Span } from "../styles/Footer.styled";
+import { ContainerWithFlex } from "../styles/components/Flex.styled";
+import { FooterStyled } from "../styles/components/Footer.styled";
 
 const Footer = () => {
   const [currentTime, setCurrentTime] = useState(getFormattedTime());
@@ -24,7 +22,7 @@ const Footer = () => {
 
   return (
     <FooterStyled>
-      <ContainerWithFlex>
+      <ContainerWithFlex display="flex" justifyContent="center">
         Games Exchange © {new Date().getFullYear()} Local Time: {currentTime}
       </ContainerWithFlex>
     </FooterStyled>

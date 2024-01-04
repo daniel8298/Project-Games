@@ -1,14 +1,13 @@
-import { useState } from "react";
-import { HorizontalLine, StyledCard } from "../../global/styles/Card.styled";
-import { Logo } from "../../global/styles/Header.styled";
+import {
+  HorizontalLine,
+  StyledCard,
+} from "../../global/styles/components/Card.styled";
+import { ContainerWithFlex } from "../../global/styles/components/Flex.styled";
+import { Logo } from "../../global/styles/components/Header.styled";
 import { Checkbox, Image } from "../styles/Exchange.styled";
-import { GamesProps } from "./CardAdmin";
+import { GamesPropsDelete } from "../types/games";
 
-const CardUser = ({ games, handleGameDelete }: GamesProps) => {
-  // const handleGameDelete = (id: string) => {
-  //   const updatedGames = games.filter((game) => game.id !== id);
-  //   setGames(updatedGames);
-  // };
+const CardUser = ({ games, handleGameDelete }: GamesPropsDelete) => {
   return (
     <StyledCard>
       <Image
@@ -22,14 +21,16 @@ const CardUser = ({ games, handleGameDelete }: GamesProps) => {
         {games.map((game) => (
           <div key={game.id}>
             <label>
-              <Logo
-                src="../../../../../public/delete-svgrepo-com.svg"
-                alt="delete"
-                width={"25px"}
-                onClick={() => handleGameDelete(game.id)}
-              />
-              <Checkbox type="checkbox" checked={game.checked} />
-              {game.name}
+              <ContainerWithFlex display="flex" alignItems="center">
+                <Logo
+                  src="../../../../public/delete-svgrepo-com.svg"
+                  alt="delete"
+                  width={"25px"}
+                  onClick={() => handleGameDelete(game.id)}
+                />
+                <Checkbox type="checkbox" />
+                {game.name}
+              </ContainerWithFlex>
             </label>
             {<br />}
           </div>

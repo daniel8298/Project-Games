@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { removeToken } from "../../../users/services/localStorageService";
 import { setDecodedToken } from "../../token/tokenSlice";
 import { useAppDispatch } from "../../../../store/hooks";
-import { Button } from "../../styles/Button.styled";
+import { Button } from "../../styles/components/Button.styled";
 
 const HeaderLogOutButton = () => {
   const navigate = useNavigate();
