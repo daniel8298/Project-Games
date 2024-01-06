@@ -8,10 +8,10 @@ type Container = {
   minHeight?: string;
   padding?: string;
   display?: string;
-  flexDirection?: string;
-  alignItems?: string;
-  justifyContent?: string;
-  flexWrap?: string;
+  flexdirection?: string;
+  alignitems?: string;
+  justifycontent?: string;
+  flexwrap?: string;
 };
 
 export const ContainerWithFlex = styled.div<Container>`
@@ -23,10 +23,10 @@ export const ContainerWithFlex = styled.div<Container>`
   min-height: ${({ maxWidth }) => maxWidth};
   padding: ${({ padding }) => padding};
   display: ${({ display }) => display};
-  flex-direction: ${({ flexDirection }) => flexDirection};
-  align-items: ${({ alignItems }) => alignItems};
-  justify-content: ${({ justifyContent }) => justifyContent};
-  flex-wrap: ${({ flexWrap }) => flexWrap};
+  flex-direction: ${({ flexdirection }) => flexdirection};
+  align-items: ${({ alignitems }) => alignitems};
+  justify-content: ${({ justifycontent }) => justifycontent};
+  flex-wrap: ${({ flexwrap }) => flexwrap};
 
   /* & > div,
   & > ul {

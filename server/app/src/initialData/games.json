@@ -12,7 +12,8 @@
       "city": "Ashdod",
       "street": "jerusalem 14"
     },
-    "userId": "1"
+    "userId": "1",
+    "email": "daniel8298@gmail.com"
   },
   {
     "name": "GTA IV",
@@ -27,7 +28,8 @@
       "city": "Ptach Tikav",
       "street": "hazira 13"
     },
-    "userId": "1"
+    "userId": "1",
+    "email": "daniel8298@gmail.com"
   },
   {
     "name": "Call Of Duty",
@@ -42,6 +44,7 @@
       "city": "Ptach Tikav",
       "street": "hazira 13"
     },
-    "userId": "2"
+    "userId": "2",
+    "email": "david92@gmail.com"
   }
 ]

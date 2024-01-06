@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ContainerWithFlex } from "../styles/components/Flex.styled";
 import { FooterStyled } from "../styles/components/Footer.styled";
 
 const Footer = () => {
@@ -22,9 +21,7 @@ const Footer = () => {
 
   return (
     <FooterStyled>
-      <ContainerWithFlex display="flex" justifyContent="center">
-        Games Exchange © {new Date().getFullYear()} Local Time: {currentTime}
-      </ContainerWithFlex>
+      Games Exchange © {new Date().getFullYear()} Local Time: {currentTime}
     </FooterStyled>
   );
 };

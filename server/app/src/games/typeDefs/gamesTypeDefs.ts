@@ -18,6 +18,8 @@ scalar Date
     imageAlt: String
     dateGame: Date
     address: Address
+    userId: String
+    email: String
   }
 
   input EditGameInput {
@@ -40,6 +42,7 @@ scalar Date
     imageUrl: String
     imageAlt: String
     address: AddressInput
+    email: String
   }
 
   input AddressInput {

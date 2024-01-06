@@ -3,10 +3,9 @@ import styled from "styled-components";
 export const Select = styled.select`
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  padding: 5px;
   margin: 17px;
   height: 30px;
-  width: 100px;
+  width: 120px;
 `;
 export const Image = styled.img`
   border-radius: 50%;
@@ -22,7 +21,9 @@ export const Checkbox = styled.input`
 
 export const FlexButtons = styled.div`
   display: flex;
-  justify-content: flex-end;
+  height: 50px;
+  align-items: center;
+  /* justify-content: flex-end; */
 `;
 export const FlexSelectAndButton = styled.div`
   display: flex;

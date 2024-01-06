@@ -15,6 +15,7 @@ export const GamesSchema = new Schema({
     street: String,
   },
   userId: String,
+  email: String,
 });
 
 export const Game = mongoose.model("game", GamesSchema);

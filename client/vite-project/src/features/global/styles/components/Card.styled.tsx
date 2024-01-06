@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCard = styled.div`
-  min-width: 300px;
+  min-width: 200px;
   border: 1px solid #ccc;
   border-radius: 15px;
   overflow: hidden;
@@ -10,7 +10,7 @@ export const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px;
+  margin: 15px 50px;
 `;
 
 export const HorizontalLine = styled.hr`

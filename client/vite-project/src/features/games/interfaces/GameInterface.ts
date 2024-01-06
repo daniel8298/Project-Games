@@ -1,4 +1,4 @@
-type Platform =
+export type Platform =
   | "PC"
   | "PS5"
   | "PS4"
@@ -6,7 +6,7 @@ type Platform =
   | "XBOX ONE"
   | "NINTENDO SWITCH";
 
-interface GameInterface {
+export interface GameInterface {
   _id: string;
   name: string;
   genre: string;
@@ -21,6 +21,8 @@ interface GameInterface {
     city: string;
     street: string;
   };
+  userId: string;
+  email: string;
 }
 
 export default GameInterface;

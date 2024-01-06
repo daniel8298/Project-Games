@@ -7,7 +7,7 @@ import { Logo } from "../../global/styles/components/Header.styled";
 import { Checkbox, Image } from "../styles/Exchange.styled";
 import { GamesPropsDelete } from "../types/games";
 
-const CardAdmin = ({ games, handleGameDelete }: GamesPropsDelete) => {
+const CardAdmin = ({ games, email, handleGameDelete }: GamesPropsDelete) => {
   return (
     <StyledCard>
       <div>
@@ -16,25 +16,27 @@ const CardAdmin = ({ games, handleGameDelete }: GamesPropsDelete) => {
           alt="userAdmin"
         />
       </div>
-      <h3>User Name: David</h3>
+      <h3>User Name: {email}</h3>
       <HorizontalLine />
+      <br />
       <div>
         <h4>Games For Exchange</h4>
+        <br />
         {games.map((game) => (
-          <div key={game.id}>
+          <div key={game._id}>
             <label>
-              <ContainerWithFlex display="flex" alignItems="center">
+              <ContainerWithFlex display="flex" alignitems="center">
                 <Logo
                   src="../../../../public/delete-svgrepo-com.svg"
                   alt="delete"
                   width={"25px"}
-                  onClick={() => handleGameDelete(game.id)}
+                  onClick={() => handleGameDelete(game._id)}
                 />
                 <Checkbox type="checkbox" />
                 {game.name}
               </ContainerWithFlex>
             </label>
-            {<br />}
+            <br />
           </div>
         ))}
       </div>

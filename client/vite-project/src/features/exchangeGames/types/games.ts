@@ -1,15 +1,24 @@
+import GameInterface from "../../games/interfaces/GameInterface";
+
 export type Game = {
-  name: string;
   id: string;
+  name: string;
+  platform: string; // הוספת שדה פלטפורמה לטיפוס משחק
+};
+export type Platform = {
+  id: string;
+  name: string;
 };
 
 export type GamesProps = {
-  games: Game[];
-  gamesArray: Game[];
-  setGames: React.Dispatch<React.SetStateAction<Game[]>>;
+  setGames: React.Dispatch<React.SetStateAction<GameInterface[]>>;
+  gamesArray: GameInterface[];
+  games: GameInterface[];
+  platforms: Platform[];
 };
 
 export type GamesPropsDelete = {
-  games: Game[];
+  games: GameInterface[];
   handleGameDelete: (id: string) => void;
+  email: string;
 };

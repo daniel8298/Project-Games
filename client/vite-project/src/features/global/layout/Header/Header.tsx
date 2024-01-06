@@ -11,7 +11,6 @@ import { TokenType } from "../types/token";
 import { useEffect } from "react";
 // import SideBar from "../../../games/components/SideBar";
 import { FlexButtons } from "../../../exchangeGames/styles/Exchange.styled";
-import { Container } from "../../styles/components/Container.styled";
 import { Logo, Nav, StyleHeader } from "../../styles/components/Header.styled";
 import { setThemeMode } from "../../styles/themes/themeModeSlice";
 
@@ -30,36 +29,34 @@ const Header = () => {
   }, [token]);
   return (
     <StyleHeader>
-      <Container>
-        <Nav>
-          <Logo
-            src="../../../../../public/ps5-controller.svg"
-            alt="controller"
-            width={"50px"}
+      <Nav>
+        <Logo
+          src="../../../../../public/ps5-controller.svg"
+          alt="controller"
+          width={"50px"}
+          onClick={() => {
+            // navigate("/store/home");
+            navigate("/store/exchangeGamesPage");
+          }}
+        />
+        <FlexButtons>
+          {decodedToken === null ? (
+            <HeaderSignInButton />
+          ) : (
+            <HeaderLogOutButton />
+          )}
+          <IconButton
             onClick={() => {
-              // navigate("/store/home");
-              navigate("/store/exchangeGamesPage");
+              dispatch(setThemeMode(!themeMode));
             }}
-          />
-          <FlexButtons>
-            {decodedToken === null ? (
-              <HeaderSignInButton />
-            ) : (
-              <HeaderLogOutButton />
-            )}
-            <IconButton
-              onClick={() => {
-                dispatch(setThemeMode(!themeMode));
-              }}
-            >
-              {themeMode ? <DarkModeIcon /> : <Brightness7Icon />}
-            </IconButton>
-            {/* <SideBar /> */}
-          </FlexButtons>
-        </Nav>
+          >
+            {themeMode ? <DarkModeIcon /> : <Brightness7Icon />}
+          </IconButton>
+          {/* <SideBar /> */}
+        </FlexButtons>
 
-        {/* {decodedToken && <ShowOrdersHistory />} */}
-      </Container>
+        {/* {decodedToken && <ShowOrdersHistory />}  */}
+      </Nav>
     </StyleHeader>
   );
 };

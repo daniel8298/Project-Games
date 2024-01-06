@@ -8,13 +8,7 @@ type LayoutProps = { children: JSX.Element[] | JSX.Element };
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <ContainerWithFlex
-      display="flex"
-      minHeight="100vh"
-      minWidth="100%"
-      flexDirection="column"
-      justifyContent="space-between"
-    >
+    <ContainerWithFlex display="flex" flexdirection="column" height="100vh">
       <Header />
       <Main>{children}</Main>
       <Footer />

@@ -12,8 +12,8 @@ export const Button = styled.button<ButtonProps>`
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
-  padding: 10px 30px;
-  margin: 10px;
+  padding: 7px 10px;
+  margin: 5px;
   background-color: ${({ bg }) => bg || "skyblue"};
   color: ${({ color }) => color || "#333"};
 
@@ -21,5 +21,9 @@ export const Button = styled.button<ButtonProps>`
     opacity: 0.9;
     transform: scale(0.9);
     background-color: blue;
+  }
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 `;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const FooterStyled = styled.footer`
   color: white;
   background-color: #22242d;
-  padding: 10px 0;
-  bottom: 0;
-  width: 100%;
-  position: absolute;
+  height: 50px;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
 `;

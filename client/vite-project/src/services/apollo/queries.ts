@@ -17,6 +17,8 @@ export const QUERY_GAME = gql`
       imageUrl
       name
       platforms
+      userId
+      email
     }
   }
 `;
@@ -38,6 +40,31 @@ export const QUERY_GAMES = gql`
       imageUrl
       name
       platforms
+      userId
+      email
+    }
+  }
+`;
+
+export const QUERY_GAMES_BY_USERID = gql`
+  query GetGamesByUserId($getGamesByUserIdId: String) {
+    getGamesByUserId(id: $getGamesByUserIdId) {
+      _id
+      address {
+        areaCountry
+        city
+        street
+      }
+      contactNumber
+      dateGame
+      description
+      genre
+      email
+      imageAlt
+      name
+      imageUrl
+      platforms
+      userId
     }
   }
 `;
