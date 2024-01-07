@@ -17,5 +17,4 @@ export const Container = styled.div<Container>`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   padding: 0 100px;
-  /* margin: 0 auto; */
 `;

@@ -24,8 +24,8 @@ const ExchangeGamesPage = ({ games }: GamesProps) => {
     const updatedGames = gamesUser.filter((game) => game._id !== id);
     setGamesUser(updatedGames);
   };
-  const email = games[0].email;
-  const username = email.split("@")[0];
+
+  // const username = email.split("@")[0];
 
   return (
     <>
@@ -63,12 +63,12 @@ const ExchangeGamesPage = ({ games }: GamesProps) => {
         />
 
         <CardAdmin
-          email={"username"}
+          // email={games[0].genre}
           games={gamesAdmin}
           handleGameDelete={handleGameDeleteAdmin}
         />
         <CardUser
-          email={"username"}
+          // email={"username"}
           games={gamesUser}
           handleGameDelete={handleGameDeleteUser}
         />
