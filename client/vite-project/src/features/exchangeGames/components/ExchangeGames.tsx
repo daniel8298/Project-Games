@@ -25,8 +25,6 @@ const ExchangeGamesPage = ({ games }: GamesProps) => {
     setGamesUser(updatedGames);
   };
 
-  // const username = email.split("@")[0];
-
   return (
     <>
       <ContainerWithFlex
