@@ -24,8 +24,6 @@ const ExchangeGamesPage = ({ games }: GamesProps) => {
     const updatedGames = gamesUser.filter((game) => game._id !== id);
     setGamesUser(updatedGames);
   };
-  const email = games[0].email;
-  const username = email.split("@")[0];
 
   return (
     <>
