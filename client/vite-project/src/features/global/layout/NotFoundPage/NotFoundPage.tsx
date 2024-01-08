@@ -9,14 +9,15 @@ const NotFoundPage: React.FC = () => {
 
   return (
     <ContainerWithFlex
-      display="flex"
-      alignitems="center"
+      display="inherit"
       flexdirection="column"
+      justifycontent="center"
+      alignitems="center"
+      boxshadow="0 0 10px rgba(0, 0, 0, 0.7)"
     >
-      {/* <Paper elevation={2} style={{ padding: "45px", textAlign: "center" }}> */}
       <Image
-        width="650px"
-        height="500px"
+        hei="470px"
+        wid="700px"
         src="https://www.digitalmesh.com/blog/wp-content/uploads/2020/05/404-error.jpg"
         alt="404"
       />

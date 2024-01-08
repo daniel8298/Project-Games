@@ -4,8 +4,9 @@ import { SignInUpButtonInterface } from "../../interfaces/SignInUpButtonInterfac
 import { useNavigate } from "react-router-dom";
 import { useAlerts } from "../../hooks/useAlerts";
 import SignInUpAlert from "../alert/SignInUpAlert";
-import { SignUpRequest } from "../../services/usersRequests";
+
 import { useAppDispatch, useAppSelector } from "../../../../store/hooks";
+import { SignUpRequest } from "../../services/SignUpRequest";
 // import getAllGames from "../../../games/services/getAllGames";
 const SignUpButton: FC<SignInUpButtonInterface> = ({
   text,
@@ -15,13 +16,12 @@ const SignUpButton: FC<SignInUpButtonInterface> = ({
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { alert, handleAlertClose, showAlert } = useAlerts();
-  const { error, user } = useAppSelector((store) => store.users);
+  const { error } = useAppSelector((store) => store.users);
 
   const handleSubmit = () => {
     const userSignUp = {
       email: watch("email"),
       password: watch("password"),
-      isAdmin: false,
     };
     console.log("user input", userSignUp);
     dispatch(SignUpRequest(userSignUp));

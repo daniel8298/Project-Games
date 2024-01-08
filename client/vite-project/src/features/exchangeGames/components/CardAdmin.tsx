@@ -12,6 +12,9 @@ const CardAdmin = ({ games, email, handleGameDelete }: GamesPropsDelete) => {
     <StyledCard>
       <div>
         <Image
+          radius="50%"
+          hei="200px"
+          wid="200px"
           src="https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg"
           alt="userAdmin"
         />

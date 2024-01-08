@@ -5,7 +5,7 @@ export const StyledCard = styled.div`
   border: 1px solid #ccc;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   padding: 10px;
   display: flex;
   flex-direction: column;

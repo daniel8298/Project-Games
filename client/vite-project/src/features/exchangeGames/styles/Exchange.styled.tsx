@@ -1,4 +1,9 @@
 import styled from "styled-components";
+type Image = {
+  radius?: string;
+  wid?: string;
+  hei?: string;
+};
 
 export const Select = styled.select`
   border-radius: 15px;
@@ -7,10 +12,10 @@ export const Select = styled.select`
   height: 30px;
   width: 120px;
 `;
-export const Image = styled.img`
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
+export const Image = styled.img<Image>`
+  border-radius: ${({ radius }) => radius};
+  width: ${({ wid }) => wid};
+  height: ${({ hei }) => hei};
   object-fit: cover;
   object-position: center;
   display: block;
@@ -23,7 +28,6 @@ export const FlexButtons = styled.div`
   display: flex;
   height: 50px;
   align-items: center;
-  /* justify-content: flex-end; */
 `;
 export const FlexSelectAndButton = styled.div`
   display: flex;

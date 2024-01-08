@@ -12,6 +12,8 @@ type Container = {
   alignitems?: string;
   justifycontent?: string;
   flexwrap?: string;
+  boxshadow?: string;
+  flexgrow?: string;
 };
 
 export const ContainerWithFlex = styled.div<Container>`
@@ -27,6 +29,8 @@ export const ContainerWithFlex = styled.div<Container>`
   align-items: ${({ alignitems }) => alignitems};
   justify-content: ${({ justifycontent }) => justifycontent};
   flex-wrap: ${({ flexwrap }) => flexwrap};
+  box-shadow: ${({ boxshadow }) => boxshadow};
+  flex-grow: ${({ flexgrow }) => flexgrow};
 
   /* & > div,
   & > ul {

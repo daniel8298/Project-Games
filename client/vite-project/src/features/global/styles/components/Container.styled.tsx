@@ -11,6 +11,7 @@ export const Container = styled.div<Container>`
   display: inherit;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-grow: 1;
   max-height: ${({ maxHeight }) => maxHeight};
   max-width: ${({ maxWidth }) => maxWidth};

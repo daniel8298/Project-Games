@@ -12,7 +12,7 @@ import {
 import { useAppDispatch } from "../../../../store/hooks";
 import { setToken } from "../../../global/token/tokenSlice";
 // import { setLoggedUser } from "../../usersSlice";
-import { SignUpRequest } from "../../services/usersRequests";
+import { SignUpRequest } from "../../services/SignUpRequest";
 // import { useToken } from "../../../token/hooks/useToken";
 const URL = `${import.meta.env.VITE_BASE_URL}/users/login`;
 const SignInButton: FC<SignInUpButtonInterface> = ({

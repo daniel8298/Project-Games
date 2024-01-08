@@ -6,7 +6,8 @@ import {
   logedInUser,
   setItem,
 } from "../users/services/localStorageService";
-import { SignInRequest, SignUpRequest } from "../users/services/usersRequests";
+import { SignUpRequest } from "./services/SignUpRequest";
+import { SignInRequest } from "./services/SignInRequest";
 
 interface InitialState {
   user: logedInUser | null;

@@ -39,10 +39,13 @@ export const getUser = async (_: unknown, { id }: { id: string }) => {
 
 export const signUpUser = async (_: unknown, args: { user: UserInterface }) => {
   try {
+    console.log(args.user);
+
     const { error } = userValidation(args.user);
     if (error?.details[0].message) throw new Error(error?.details[0].message);
 
     const user_register = await register(args.user);
+    if (!user_register) throw new Error("user is null");
     // pubsub.publish("USER_REGISTER", {
     //   userRegister: {
     //     ...user_register,
@@ -51,7 +54,10 @@ export const signUpUser = async (_: unknown, args: { user: UserInterface }) => {
     await redisClient.json.del("users");
     return user_register;
   } catch (error) {
-    if (error instanceof Error) console.log(error.message);
+    if (error instanceof Error) {
+      console.log(error.message);
+      throw new Error("Failed to register user");
+    }
     return null;
   }
 };

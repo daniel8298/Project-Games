@@ -70,12 +70,12 @@ const ExchangeGamesPage = ({ games }: GamesProps) => {
           games={gamesUser}
           handleGameDelete={handleGameDeleteUser}
         />
-        {/* <SelectGames
+        <SelectGames
           gamesArray={gamesUser}
           setGames={setGamesUser}
-          games={arrayGamesUser}
+          games={games}
           platforms={platforms}
-        /> */}
+        />
       </ContainerWithFlex>
 
       <ContainerWithFlex
