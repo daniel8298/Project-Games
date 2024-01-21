@@ -63,8 +63,9 @@ const ExchangeGamesPage = ({ userGames, userExchange }: GamesProps) => {
           alignitems="center"
           justifycontent="center"
           flexwrap="wrap"
-          height="900px"
           boxshadow="0 0 10px rgba(0, 0, 0, 0.7)"
+          radius="15px"
+          margin="20px"
         >
           <SelectGames
             gamesArray={gamesExchangeUser}
@@ -85,8 +86,9 @@ const ExchangeGamesPage = ({ userGames, userExchange }: GamesProps) => {
           alignitems="center"
           justifycontent="center"
           flexwrap="wrap"
-          height="900px"
           boxshadow="0 0 10px rgba(0, 0, 0, 0.7)"
+          radius="15px"
+          margin="20px"
         >
           <CardUser games={gamesUser} handleGameDelete={handleGameDeleteUser} />
           <SelectGames

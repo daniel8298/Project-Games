@@ -15,6 +15,8 @@ type Container = {
   boxshadow?: string;
   flexgrow?: string;
   background?: string;
+  radius?: string;
+  margin?: string;
 };
 
 export const ContainerWithFlex = styled.div<Container>`
@@ -33,6 +35,8 @@ export const ContainerWithFlex = styled.div<Container>`
   box-shadow: ${({ boxshadow }) => boxshadow};
   flex-grow: ${({ flexgrow }) => flexgrow};
   background-color: ${({ background }) => background};
+  border-radius: ${({ radius }) => radius};
+  margin: ${({ margin }) => margin};
 
   /* & > div,
   & > ul {

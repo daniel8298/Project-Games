@@ -7,11 +7,7 @@ import { Logo } from "../../global/styles/components/Header.styled";
 import { Checkbox, Image } from "../styles/Exchange.styled";
 import { GamesPropsDelete } from "../types/games";
 
-const CardExchangeUser = ({
-  games,
-  email,
-  handleGameDelete,
-}: GamesPropsDelete) => {
+const CardExchangeUser = ({ games, handleGameDelete }: GamesPropsDelete) => {
   return (
     <StyledCard>
       <div>
@@ -20,32 +16,34 @@ const CardExchangeUser = ({
           hei="200px"
           wid="200px"
           src="https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg"
-          alt="userAdmin"
+          alt="exchangeUser"
         />
       </div>
-      <h3>User Name: {email}</h3>
+      <h3>User Name: {}</h3>
+
       <HorizontalLine />
       <br />
       <div>
         <h4>Games For Exchange</h4>
         <br />
-        {games.map((game) => (
-          <div key={game._id}>
-            <label>
-              <ContainerWithFlex display="flex" alignitems="center">
-                <Logo
-                  src="../../../../public/delete-svgrepo-com.svg"
-                  alt="delete"
-                  width={"25px"}
-                  onClick={() => handleGameDelete(game._id)}
-                />
-                <Checkbox type="checkbox" />
-                {game.name}
-              </ContainerWithFlex>
-            </label>
-            <br />
-          </div>
-        ))}
+        {games &&
+          games.map((game) => (
+            <div key={game._id}>
+              <label>
+                <ContainerWithFlex display="flex" alignitems="center">
+                  <Logo
+                    src="../../../../public/delete-svgrepo-com.svg"
+                    alt="delete"
+                    width={"25px"}
+                    onClick={() => handleGameDelete(game._id)}
+                  />
+                  <Checkbox type="checkbox" />
+                  {game.name}
+                </ContainerWithFlex>
+              </label>
+              <br />
+            </div>
+          ))}
       </div>
     </StyledCard>
   );

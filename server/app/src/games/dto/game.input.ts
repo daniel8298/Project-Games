@@ -36,6 +36,4 @@ export class GameInputCreate {
   imageAlt: String;
   @Field()
   address: GameInputAddress;
-  @Field()
-  email: String;
 }

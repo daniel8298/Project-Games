@@ -72,7 +72,13 @@ export class GamesResolver {
     try {
       const { req } = context;
       const userId = req.user.id;
-      const newGame = await this.gamesService.create(userId, inputGame);
+      const userEmail = req.user.email;
+
+      const newGame = await this.gamesService.create(
+        userId,
+        userEmail,
+        inputGame,
+      );
       if (newGame) return 'Game Created!';
     } catch (error) {
       throw new BadRequestException('game a not created');

@@ -64,7 +64,6 @@ input GameInputCreate {
   imageUrl: String!
   imageAlt: String!
   address: GameInputAddress!
-  email: String!
 }
 
 input GameInputAddress {

@@ -50,7 +50,7 @@ export class UsersService {
         passwordFromDb,
       );
       if (!isPasswordValid) throw new Error('Invalid email or password');
-      const token = generateAuthToken({ id, isAdmin });
+      const token = generateAuthToken({ id, email, isAdmin });
       return token;
     } catch (error) {
       return Promise.reject(error);

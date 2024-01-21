@@ -16,12 +16,15 @@ const ExchangeGamesPage = () => {
   );
 
   useEffect(() => {
-    dispatch(getGamesByUserId("6"));
-    dispatch(getGamesByAnotherUserId("7"));
-  }, []);
+    dispatch(getGamesByUserId("1"));
+    dispatch(getGamesByAnotherUserId("2"));
+  }, [dispatch]);
 
   if (pending) return <SpinnerComponent />;
   if (error) return <NotFoundPage />;
+
+  console.log("gamesFromUser", gamesFromUser); // Log the data to check if it's empty
+  console.log("gamesFromAnotherUser", gamesFromAnotherUser);
 
   return (
     <>
