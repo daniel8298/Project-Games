@@ -9,4 +9,4 @@ COPY ./app .
 RUN npm install 
 RUN npm install -D typescript
 
-CMD ["npm", "start"]
+CMD ["npm", "start","dev"]

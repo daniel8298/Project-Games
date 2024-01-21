@@ -3,7 +3,7 @@ import type { PayloadAction, SerializedError } from "@reduxjs/toolkit";
 import getGame from "./services/getGame";
 import GameInterface from "./interfaces/GameInterface";
 import getAllGames from "./services/getAllGames";
-import getGamesByUserId from "./services/getGamesByUserId";
+// import getGamesByUserId from "./services/getGamesByUserId";
 
 interface InitialState {
   pending: boolean;
@@ -64,20 +64,20 @@ export const gamesSlice = createSlice({
       state.error = action.error;
       return state;
     });
-    builder.addCase(getGamesByUserId.pending, (state) => {
-      state.pending = true;
-      return state;
-    });
-    builder.addCase(getGamesByUserId.fulfilled, (state, action) => {
-      state.pending = false;
-      state.games = action.payload;
-      return state;
-    });
-    builder.addCase(getGamesByUserId.rejected, (state, action) => {
-      state.pending = false;
-      state.error = action.error;
-      return state;
-    });
+    // builder.addCase(getGamesByUserId.pending, (state) => {
+    //   state.pending = true;
+    //   return state;
+    // });
+    // builder.addCase(getGamesByUserId.fulfilled, (state, action) => {
+    //   state.pending = false;
+    //   state.games = action.payload;
+    //   return state;
+    // });
+    // builder.addCase(getGamesByUserId.rejected, (state, action) => {
+    //   state.pending = false;
+    //   state.error = action.error;
+    //   return state;
+    // });
   },
 });
 

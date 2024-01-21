@@ -1,5 +1,4 @@
 import { useState } from "react";
-import CardAdmin from "../components/CardAdmin";
 import CardUser from "../components/CardUser";
 import { ContainerWithFlex } from "../../global/styles/components/Flex.styled";
 import { Logo } from "../../global/styles/components/Header.styled";
@@ -7,18 +6,22 @@ import { Button } from "../../global/styles/components/Button.styled";
 import SelectGames from "../components/SelectGames";
 import { platforms } from "../db/games";
 import GameInterface from "../../games/interfaces/GameInterface";
+import CardExchangeUser from "./CardExchangeUser";
 
 type GamesProps = {
-  games: GameInterface[];
+  userGames: GameInterface[];
+  userExchange: GameInterface[];
 };
 
-const ExchangeGamesPage = ({ games }: GamesProps) => {
-  const [gamesAdmin, setGamesAdmin] = useState<GameInterface[]>([]);
+const ExchangeGamesPage = ({ userGames, userExchange }: GamesProps) => {
+  const [gamesExchangeUser, setGamesExchangeUser] = useState<GameInterface[]>(
+    []
+  );
   const [gamesUser, setGamesUser] = useState<GameInterface[]>([]);
 
   const handleGameDeleteAdmin = (id: string) => {
-    const updatedGames = gamesAdmin.filter((game) => game._id !== id);
-    setGamesAdmin(updatedGames);
+    const updatedGames = gamesExchangeUser.filter((game) => game._id !== id);
+    setGamesExchangeUser(updatedGames);
   };
   const handleGameDeleteUser = (id: string) => {
     const updatedGames = gamesUser.filter((game) => game._id !== id);
@@ -53,29 +56,46 @@ const ExchangeGamesPage = ({ games }: GamesProps) => {
         flexdirection="row"
         flexwrap="wrap"
       >
-        <SelectGames
-          gamesArray={gamesAdmin}
-          setGames={setGamesAdmin}
-          games={games}
-          platforms={platforms}
-        />
+        <ContainerWithFlex
+          background="rgb(2,0,36);
+          background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(84,84,173,1) 35%, rgba(0,212,255,1) 100%);"
+          display="flex"
+          alignitems="center"
+          justifycontent="center"
+          flexwrap="wrap"
+          height="900px"
+          boxshadow="0 0 10px rgba(0, 0, 0, 0.7)"
+        >
+          <SelectGames
+            gamesArray={gamesExchangeUser}
+            setGames={setGamesExchangeUser}
+            games={userGames}
+            platforms={platforms}
+          />
 
-        <CardAdmin
-          // email={games[0].genre}
-          games={gamesAdmin}
-          handleGameDelete={handleGameDeleteAdmin}
-        />
-        <CardUser
-          // email={"username"}
-          games={gamesUser}
-          handleGameDelete={handleGameDeleteUser}
-        />
-        <SelectGames
-          gamesArray={gamesUser}
-          setGames={setGamesUser}
-          games={games}
-          platforms={platforms}
-        />
+          <CardExchangeUser
+            games={gamesExchangeUser}
+            handleGameDelete={handleGameDeleteAdmin}
+          />
+        </ContainerWithFlex>
+        <ContainerWithFlex
+          background="rgb(200,196,50);
+          background: linear-gradient(90deg, rgba(200,196,50,1) 35%, rgba(0,212,255,1) 100%);"
+          display="flex"
+          alignitems="center"
+          justifycontent="center"
+          flexwrap="wrap"
+          height="900px"
+          boxshadow="0 0 10px rgba(0, 0, 0, 0.7)"
+        >
+          <CardUser games={gamesUser} handleGameDelete={handleGameDeleteUser} />
+          <SelectGames
+            gamesArray={gamesUser}
+            setGames={setGamesUser}
+            games={userExchange}
+            platforms={platforms}
+          />
+        </ContainerWithFlex>
       </ContainerWithFlex>
 
       <ContainerWithFlex

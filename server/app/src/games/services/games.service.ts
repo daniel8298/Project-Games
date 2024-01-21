@@ -36,6 +36,18 @@ export class GamesService {
       return Promise.reject(error);
     }
   }
+  async findGamesByUserId(userId: string) {
+    try {
+      const games = await this.gameModel.find({ userId: userId });
+      if (!games.length)
+        throw new Error(`Games with User id ${userId} not found`);
+
+      console.log('Games from DB!');
+      return games;
+    } catch (error) {
+      return Promise.reject(error);
+    }
+  }
   async create(userId: string, gameInput: GameInputCreate) {
     try {
       const newGame = new this.gameModel({ userId, ...gameInput });

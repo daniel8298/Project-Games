@@ -104,6 +104,7 @@
 #   mongodata:
 #     driver: local
 
+#/////////////
 version: "3.8"
 
 services:
@@ -121,9 +122,10 @@ services:
     networks:
       - app-network
     environment:
+      PORT: 4003
       PG_HOST: postgres
       CONNECTION_STRING: postgres://postgres:1995@postgres:5432/projectGames
-      MONGO_URI: mongodb://root:examplePassword@mongo:27017/projectGames
+      MONGO_URI: mongodb://daniel8298:1995@mongo:27017/projectGames
       JWT_KEY: SECRET-KEY
       REDIS_HOST: redis
       REDIS_PORT: 6379
@@ -142,7 +144,7 @@ services:
     develop:
       watch:
         - action: rebuild
-          path: ./client/app/package.json
+          path: ./client/vite-project/package.json
     ports:
       - "8002:8002"
     tty: true
@@ -150,7 +152,7 @@ services:
       - app-network
     volumes:
       - type: bind
-        source: ./client/app/src
+        source: ./client/vite-project/src
         target: /client/src
     depends_on:
       - redis
@@ -170,6 +172,7 @@ services:
       PG_DB: projectGames
       PG_USER: postgres
       PG_PASSWORD: 1995
+      PG_PORT: 5432
     volumes:
       - postgresdata:/var/lib/postgresql/data
 
@@ -182,9 +185,9 @@ services:
     networks:
       - app-network
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: examplePassword
-      MONGO_INITDB_DATABASE: projectGames
+      MONGO_USERNAME: daniel8298
+      MONGO_PASSWORD: 1995
+      MONGO_DATABASE: projectGames
     volumes:
       - mongodbdata:/data/db
 
@@ -195,7 +198,12 @@ services:
       - app-network
     ports:
       - "6379:6379"
-    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    command: redis-server --save 20 1 --loglevel warning
+
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
     volumes:
       - cache:/data
       - ./server/redis.conf:/usr/local/etc/redis
@@ -208,88 +216,3 @@ volumes:
     driver: local
   postgresdata:
   mongodbdata:
-# version: "3.8"
-
-# services:
-#   server:
-#     container_name: server-demo
-#     build:
-#       context: ./server
-#       dockerfile: Dockerfile
-#     develop:
-#       watch:
-#         - ./server/app/package.json:./server
-#     ports:
-#       - "4003:4003"
-#     networks:
-#       - app-network
-#     environment:
-#       PG_HOST: postgres
-#       CONNECTION_STRING: postgres://postgres:1995@postgres:5432/projectGames
-#       JWT_KEY: SECRET-KEY
-#       REDIS_HOST: redis
-#       REDIS_PORT: 6379
-#     volumes:
-#       - type: bind
-#         source: ./server/app/src
-#         target: /server/src
-#     depends_on:
-#       - redis
-#       - postgres
-
-#   client:
-#     container_name: client-demo
-#     build:
-#       context: ./client
-#       dockerfile: Dockerfile
-#     develop:
-#       watch:
-#         - ./client/app/package.json:./client
-#     ports:
-#       - "8002:8002"
-#     tty: true
-#     networks:
-#       - app-network
-#     volumes:
-#       - type: bind
-#         source: ./client/app/src
-#         target: /client/src
-#     depends_on:
-#       - redis
-#       - postgres
-#       - server
-
-#   postgres:
-#     container_name: postgres
-#     image: postgres:13
-#     restart: always
-#     ports:
-#       - "5432:5432"
-#     networks:
-#       - app-network
-#     environment:
-#       PG_DB: projectGames
-#       PG_USER: postgres
-#       PG_PASSWORD: 1995
-#     volumes:
-#       - postgresdata:/var/lib/postgresql/data
-
-#   redis:
-#     image: redis/redis-stack
-#     restart: always
-#     networks:
-#       - app-network
-#     ports:
-#       - "6379:6379"
-#     command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
-#     volumes:
-#       - cache:/data
-#       - ./server/redis.conf:/usr/local/etc/redis
-
-# networks:
-#   app-network:
-
-# volumes:
-#   cache:
-#     driver: local
-#   postgresdata:

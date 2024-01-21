@@ -4,7 +4,7 @@ import { blue, whiteBright } from 'chalk';
 const PORT = process.env.PORT || 4000;
 
 const bootstrap = async () => {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { cors: true });
   await app.listen(PORT, () => {
     console.log(blue(`🚀 server Listening on PORT: ${PORT}`));
     console.log(

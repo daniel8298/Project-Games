@@ -7,7 +7,11 @@ import { Logo } from "../../global/styles/components/Header.styled";
 import { Checkbox, Image } from "../styles/Exchange.styled";
 import { GamesPropsDelete } from "../types/games";
 
-const CardAdmin = ({ games, email, handleGameDelete }: GamesPropsDelete) => {
+const CardExchangeUser = ({
+  games,
+  email,
+  handleGameDelete,
+}: GamesPropsDelete) => {
   return (
     <StyledCard>
       <div>
@@ -47,4 +51,4 @@ const CardAdmin = ({ games, email, handleGameDelete }: GamesPropsDelete) => {
   );
 };
 
-export default CardAdmin;
+export default CardExchangeUser;

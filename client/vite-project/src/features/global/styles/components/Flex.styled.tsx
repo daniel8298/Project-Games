@@ -14,6 +14,7 @@ type Container = {
   flexwrap?: string;
   boxshadow?: string;
   flexgrow?: string;
+  background?: string;
 };
 
 export const ContainerWithFlex = styled.div<Container>`
@@ -31,6 +32,7 @@ export const ContainerWithFlex = styled.div<Container>`
   flex-wrap: ${({ flexwrap }) => flexwrap};
   box-shadow: ${({ boxshadow }) => boxshadow};
   flex-grow: ${({ flexgrow }) => flexgrow};
+  background-color: ${({ background }) => background};
 
   /* & > div,
   & > ul {

@@ -6,11 +6,12 @@ type Image = {
 };
 
 export const Select = styled.select`
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   margin: 17px;
-  height: 30px;
-  width: 120px;
+  height: 58px;
+  width: 159px;
+  padding: 4px;
 `;
 export const Image = styled.img<Image>`
   border-radius: ${({ radius }) => radius};

@@ -1,79 +1,28 @@
 import { gql } from "@apollo/client";
 
 export const MUTATIONS_USER_SIGNUP = gql`
-  mutation SignUpUser($user: RegisterUserInput) {
-    signUpUser(user: $user) {
-      _id
-      email
-      password
-    }
+  mutation RegisterUser($inputUser: RegisterUser!) {
+    registerUser(inputUser: $inputUser)
   }
 `;
 export const MUTATIONS_USER_SIGNIN = gql`
-  mutation SignInUser($user: LoginUserInput) {
-    signInUser(user: $user) {
-      token
-    }
+  mutation LoginUser($inputUser: LoginUser!) {
+    loginUser(inputUser: $inputUser)
   }
 `;
 export const MUTATIONS_EDIT_GAME = gql`
-  mutation EditGame($editGameId: ID, $game: EditGameInput) {
-    editGame(id: $editGameId, game: $game) {
-      area {
-        areaCountry
-        city
-        street
-      }
-      _id
-      contactNumber
-      dateGame
-      description
-      genre
-      imageAlt
-      imageUrl
-      name
-      platforms
-    }
+  mutation UpdateGame($updateGameId: String!, $inputGame: GameInputUpdate!) {
+    updateGame(id: $updateGameId, inputGame: $inputGame)
   }
 `;
 
 export const MUTATION_ADD_GAME = gql`
-  mutation AddGame($game: AddGameInput) {
-    addGame(game: $game) {
-      _id
-      area {
-        areaCountry
-        city
-        street
-      }
-      contactNumber
-      dateGame
-      description
-      genre
-      imageAlt
-      imageUrl
-      name
-      platforms
-    }
+  mutation CreateGame($inputGame: GameInputCreate!) {
+    createGame(inputGame: $inputGame)
   }
 `;
 export const MUTATION_DELETE_GAME = gql`
-  mutation DeleteGame($deleteGameId: ID) {
-    deleteGame(id: $deleteGameId) {
-      _id
-      area {
-        areaCountry
-        city
-        street
-      }
-      contactNumber
-      dateGame
-      description
-      genre
-      imageAlt
-      imageUrl
-      name
-      platforms
-    }
+  mutation DeleteGame($deleteGameId: String!) {
+    deleteGame(id: $deleteGameId)
   }
 `;

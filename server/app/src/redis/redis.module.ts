@@ -5,6 +5,7 @@ import { redisStore } from 'cache-manager-redis-store';
 import { magenta } from 'chalk';
 
 const { REDIS_HOST, REDIS_PORT } = process.env;
+console.log(REDIS_HOST);
 
 const RedisOptions: CacheModuleAsyncOptions = {
   isGlobal: true,

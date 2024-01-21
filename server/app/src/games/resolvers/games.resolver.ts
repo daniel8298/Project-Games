@@ -50,6 +50,17 @@ export class GamesResolver {
       throw new NotFoundException(error.message);
     }
   }
+  @Query(() => [GameType])
+  @UseInterceptors(CacheOneInterceptor)
+  @GraphqlCacheKey('gamesByUserId')
+  async gamesByUserId(@Args('id') userId: string) {
+    try {
+      const games = await this.gamesService.findGamesByUserId(userId);
+      return games;
+    } catch (error) {
+      throw new NotFoundException(error.message);
+    }
+  }
 
   @Mutation(() => String)
   @UseGuards(LoginGuard)

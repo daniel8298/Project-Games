@@ -13,7 +13,11 @@ const SelectGames = ({
   const [selectedGame, setSelectedGame] = useState("");
 
   const renderPlatformOptions = (platforms: Platform[]) => {
-    return platforms.map((platform) => (
+    const platformsWithGames = platforms.filter((platform) =>
+      games.some((game) => game.platforms === platform.name)
+    );
+
+    return platformsWithGames.map((platform) => (
       <option key={platform.id} value={platform.name}>
         {platform.name}
       </option>
@@ -49,11 +53,6 @@ const SelectGames = ({
       );
       if (selectedGameObject) {
         const newGame = selectedGameObject;
-        // const newGame: Game = {
-        //   name: selectedGameObject.name,
-        //   id: selectedGameObject._id,
-        //   platform: selectedPlatform,
-        // };
         setGames([...gamesArray, newGame]);
         setSelectedGame("");
       }
@@ -63,7 +62,7 @@ const SelectGames = ({
   return (
     <FlexSelectAndButton>
       <Select onChange={handlePlatformChange} value={selectedPlatform}>
-        <option value="">Select Platform</option>
+        <option value="">SELECT PLATFORM</option>
         {renderPlatformOptions(platforms)}
       </Select>
       <Select
@@ -71,7 +70,7 @@ const SelectGames = ({
         value={selectedGame}
         disabled={!selectedPlatform}
       >
-        <option value="">Select Game</option>
+        <option value="">SELECT GAME</option>
         {renderGameOptions(selectedPlatform)}
       </Select>
       <Button

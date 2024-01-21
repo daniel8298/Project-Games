@@ -39,6 +39,7 @@ type MessageType {
 type Query {
   games: [GameType!]!
   game(id: String!): GameType!
+  gamesByUserId(id: String!): [GameType!]!
   users: [UserObject!]!
   user(id: Float!): UserObject!
 }

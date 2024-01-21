@@ -1,22 +1,22 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_GAME = gql`
-  query GetGame($getGameId: ID) {
-    getGame(id: $getGameId) {
+  query Game($gameId: String!) {
+    game(id: $gameId) {
       _id
-      area {
+      name
+      genre
+      platforms
+      description
+      contactNumber
+      imageUrl
+      dateGame
+      imageAlt
+      address {
         areaCountry
         city
         street
       }
-      contactNumber
-      dateGame
-      description
-      genre
-      imageAlt
-      imageUrl
-      name
-      platforms
       userId
       email
     }
@@ -24,22 +24,22 @@ export const QUERY_GAME = gql`
 `;
 
 export const QUERY_GAMES = gql`
-  query GetGames {
-    getGames {
+  query Games {
+    games {
       _id
-      area {
+      name
+      genre
+      platforms
+      description
+      contactNumber
+      imageUrl
+      dateGame
+      imageAlt
+      address {
         areaCountry
         city
         street
       }
-      contactNumber
-      dateGame
-      description
-      genre
-      imageAlt
-      imageUrl
-      name
-      platforms
       userId
       email
     }
@@ -47,44 +47,50 @@ export const QUERY_GAMES = gql`
 `;
 
 export const QUERY_GAMES_BY_USERID = gql`
-  query GetGamesByUserId($getGamesByUserIdId: String) {
-    getGamesByUserId(id: $getGamesByUserIdId) {
+  query GamesByUserId($gamesByUserIdId: String!) {
+    gamesByUserId(id: $gamesByUserIdId) {
       _id
+      name
+      genre
+      platforms
+      description
+      contactNumber
+      imageUrl
+      dateGame
+      imageAlt
       address {
         areaCountry
         city
         street
       }
-      contactNumber
-      dateGame
-      description
-      genre
-      email
-      imageAlt
-      name
-      imageUrl
-      platforms
       userId
+      email
     }
   }
 `;
 
 export const QUERY_USERS = gql`
-  query GetUser {
-    getUsers {
-      _id
+  query Users {
+    users {
+      id
+      firstName
+      lastName
       email
       password
+      isAdmin
     }
   }
 `;
 
 export const QUERY_USER = gql`
-  query GetUser($getUserId: ID) {
-    getUser(id: $getUserId) {
-      _id
+  query User($userId: Float!) {
+    user(id: $userId) {
+      id
+      firstName
+      lastName
       email
       password
+      isAdmin
     }
   }
 `;
