@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { cyanBright } from 'chalk';
 import { Users } from '../users/entities/user.entity';
 
-const { HOST, PG_PORT, PASSWORD, USER } = process.env;
+const { HOST, PG_PORT, PG_PASSWORD, PG_USER ,PG_DB} = process.env;
 
 @Module({
   imports: [
@@ -11,10 +11,10 @@ const { HOST, PG_PORT, PASSWORD, USER } = process.env;
       type: 'postgres',
       host: HOST,
       port: Number(PG_PORT),
-      password: PASSWORD,
-      username: USER,
+      password: PG_PASSWORD,
+      username: PG_USER,
       entities: [Users],
-      database: 'postgres',
+      database: PG_DB,
       synchronize: true,
       logging: true,
     }),
