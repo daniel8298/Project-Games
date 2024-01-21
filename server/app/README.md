@@ -1,154 +1,73 @@
-# Getting Started with node server App
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-This is a node.js & express server
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
+
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+
+## Description
+
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
 
-Download or clone the project from this repo
-
-### Download the node_modules
-
-Enter the following command in the cmd / terminal in the root folder of this project
-
-```
-npm i
+```bash
+$ npm install
 ```
 
-### Run the typescript compiler
+## Running the app
 
-Run the Typescript compiler using the following command in the cmd
+```bash
+# development
+$ npm run start
 
-```
-tsc -w
-```
+# watch mode
+$ npm run start:dev
 
-### Run the server in development mode
-
-Open another cmd / terminal in the root folder and run the server in development mode using the following command in the cmd
-
-```
-npm run dev
+# production mode
+$ npm run start:prod
 ```
 
-- Runs the app with nodemon
-- The page will reload if you make edits
-- You should see the following text in the cmd / terminal
+## Test
 
-![Alt text](./public/images/image.png)
+```bash
+# unit tests
+$ npm run test
 
-## Available Routes
+# e2e tests
+$ npm run test:e2e
 
-Here you can find API addresses that the server will respond to as well as what should be sent to them in the body of the HTTP request and what permissions are required to receive a response from a specific API
-
-### Users API
-
-#### API for Register a new user
-
-```http
-  POST /api/users
+# test coverage
+$ npm run test:cov
 ```
 
-#### Request
+## Support
 
-In the request body you will need to provide an object with the following keys and values
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-| index    | type   | min | max | remark   |
-| -------- | ------ | --- | --- | -------- |
-| email    | string | 5   |     | required |
-| password | string | 7   |     | required |
-|          |
+## Stay in touch
 
-- "password" must be at least nine characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&\*-
-- "email" must be a standard email
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-#### Response
+## License
 
-Example of a response from this end point
-
-```
-{
-    "email": "test@gmail.com",
-    "password": "$2a$10$jhs6h3m8vqVUa2wVze7C1O98ZnKLWvTgzAzHgjsA/TjhjWDIZfHYe",
-    "_id": "12ddd310-5005-11ee-98a5-6b460fe7b768"
-}
-```
-
-#### API for Login a user
-
-```http
-  POST /api/users/login
-```
-
-#### Request
-
-In the request body you will need to provide an object with the following keys and values
-
-| index    | type   | min | max | remark   |
-| -------- | ------ | --- | --- | -------- |
-| email    | string | 5   |     | required |
-| password | string | 7   |     | required |
-
-- "email" must be a standard email
-- "password" must be at least nine characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&\*-
-
-#### Response
-
-If the user is in the database and the password sent is correct, The response will be a the following string with status code 201
-
-```
-You are logged in!
-```
-
-#### API for Information about all the users
-
-```http
-  GET /api/users
-```
-
-#### Response
-
-The response will be an array of users
-
-#### API for Information about a user
-
-```http
-  GET /api/users/:id
-```
-
-### Request
-
-#### API for Updating User information
-
-```http
-  PUT /api/users/:id
-```
-
-### Request
-
-In the request body you will need to provide an object with the following keys and values
-
-| index    | type   | min | max | remark   |
-| -------- | ------ | --- | --- | -------- |
-| email    | string | 5   |     | required |
-| password | string | 7   | 20  | required |
-|          |
-
-- The user "password" must be at least nine characters long and contain an uppercase letter, a lowercase letter, a number and one of the following characters !@#$%^&\*-
-- "email" must be a standard email
-
-#### API for deleting a user
-
-```http
-  DELETE /api/users/:id
-```
-
-#### API for adding a product to a user
-
-```http
-  POST /api/users/add-product/:id?product=<<productName>>
-```
-
-#### Response
-
-Example for a response
-![Alt text](public/images//res.png)
+Nest is [MIT licensed](LICENSE).

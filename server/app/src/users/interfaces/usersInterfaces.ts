@@ -1,21 +1,8 @@
 export interface UserInterface {
-  _id?: string;
+  id: number;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
+  isAdmin: boolean;
 }
-
-// export interface UserReqInterface {
-//   email: string;
-//   password: string;
-// }
-
-// export interface UserResInterface {
-//   _id: string;
-//   email: string;
-// }
-
-// export interface UserInDBInterface extends Document {
-//   _id: Types.ObjectId;
-//   email: string;
-//   password?: string | undefined;
-// }

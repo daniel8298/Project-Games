@@ -1,0 +1,116 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserObject {
+  id: Float!
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  isAdmin: Boolean!
+}
+
+type GameAddress {
+  areaCountry: String!
+  city: String!
+  street: String!
+}
+
+type GameType {
+  _id: ID!
+  name: String!
+  genre: String!
+  platforms: String!
+  description: String!
+  contactNumber: String!
+  imageUrl: String!
+  dateGame: String!
+  imageAlt: String!
+  address: GameAddress!
+  userId: String!
+  email: String!
+}
+
+type MessageType {
+  massage: String!
+}
+
+type Query {
+  games: [GameType!]!
+  game(id: String!): GameType!
+  users: [UserObject!]!
+  user(id: Float!): UserObject!
+}
+
+type Mutation {
+  createGame(inputGame: GameInputCreate!): String!
+  updateGame(id: String!, inputGame: GameInputUpdate!): String!
+  deleteGame(id: String!): String!
+  sendMessage(massage: String!): MessageType!
+  registerUser(inputUser: RegisterUser!): String!
+  loginUser(inputUser: LoginUser!): String!
+  updateUser(id: Float!, inputUser: UpdateUser!): String!
+  deleteUser(id: Float!): String!
+}
+
+input GameInputCreate {
+  name: String!
+  genre: String!
+  platforms: String!
+  description: String!
+  contactNumber: String!
+  imageUrl: String!
+  imageAlt: String!
+  address: GameInputAddress!
+  email: String!
+}
+
+input GameInputAddress {
+  areaCountry: String!
+  city: String!
+  street: String!
+}
+
+input GameInputUpdate {
+  name: String
+  genre: String
+  platforms: String
+  description: String
+  contactNumber: String
+  imageUrl: String
+  imageAlt: String
+  address: GameUpdateAddress
+}
+
+input GameUpdateAddress {
+  areaCountry: String
+  city: String
+  street: String
+}
+
+input RegisterUser {
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+  isAdmin: Boolean
+}
+
+input LoginUser {
+  email: String!
+  password: String!
+}
+
+input UpdateUser {
+  firstName: String!
+  lastName: String!
+  email: String!
+  password: String!
+}
+
+type Subscription {
+  newMessage: MessageType!
+  gameSearch: String!
+  userSearch: String!
+}
