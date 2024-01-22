@@ -21,19 +21,23 @@ const CardExchangeUser = ({
           wid="200px"
           src="https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg"
           alt="exchangeUser"
+          margin="15px 0"
         />
       </div>
       <h3>User: {email}</h3>
-
       <HorizontalLine />
-      <br />
+
       <div>
         <h4>Games For Exchange</h4>
-        <br />
+
         {games.map((game) => (
           <div key={game._id}>
             <label>
-              <ContainerWithFlex display="flex" alignitems="center">
+              <ContainerWithFlex
+                display="flex"
+                alignitems="center"
+                margin="15px 0"
+              >
                 <Logo
                   src="../../../../public/delete-svgrepo-com.svg"
                   alt="delete"

@@ -11,10 +11,10 @@ import { TokenType } from "../types/token";
 import { useEffect } from "react";
 // import SideBar from "../../../games/components/SideBar";
 import { FlexButtons } from "../../../exchangeGames/styles/Exchange.styled";
-import { Logo, Nav, StyleHeader } from "../../styles/components/Header.styled";
+import { Logo, Nav } from "../../styles/components/Header.styled";
 import { setThemeMode } from "../../styles/themes/themeModeSlice";
 
-const Header = () => {
+const HeaderNavigate = () => {
   const navigate = useNavigate();
   const themeMode = useAppSelector((store) => store.themeMode.themeMode);
   const { decodedToken } = useAppSelector((store) => store.token);
@@ -28,37 +28,34 @@ const Header = () => {
     }
   }, [token]);
   return (
-    <StyleHeader>
-      <Nav>
-        <Logo
-          src="../../../../../public/ps5-controller.svg"
-          alt="controller"
-          width={"50px"}
+    <Nav>
+      <Logo
+        src="../../../../../public/ps5-controller.svg"
+        alt="controller"
+        width={"50px"}
+        onClick={() => {
+          navigate("/store/exchangeGamesPage");
+        }}
+      />
+      <FlexButtons>
+        {decodedToken === null ? (
+          <HeaderSignInButton />
+        ) : (
+          <HeaderLogOutButton />
+        )}
+        <IconButton
           onClick={() => {
-            // navigate("/store/home");
-            navigate("/store/exchangeGamesPage");
+            dispatch(setThemeMode(!themeMode));
           }}
-        />
-        <FlexButtons>
-          {decodedToken === null ? (
-            <HeaderSignInButton />
-          ) : (
-            <HeaderLogOutButton />
-          )}
-          <IconButton
-            onClick={() => {
-              dispatch(setThemeMode(!themeMode));
-            }}
-          >
-            {themeMode ? <DarkModeIcon /> : <Brightness7Icon />}
-          </IconButton>
-          {/* <SideBar /> */}
-        </FlexButtons>
+        >
+          {themeMode ? <DarkModeIcon /> : <Brightness7Icon />}
+        </IconButton>
+        {/* <SideBar /> */}
+      </FlexButtons>
 
-        {/* {decodedToken && <ShowOrdersHistory />}  */}
-      </Nav>
-    </StyleHeader>
+      {/* {decodedToken && <ShowOrdersHistory />}  */}
+    </Nav>
   );
 };
 
-export default Header;
+export default HeaderNavigate;

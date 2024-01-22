@@ -3,7 +3,7 @@ import { Button } from "../../global/styles/components/Button.styled";
 import { FlexSelectAndButton, Select } from "../styles/Exchange.styled";
 import { GamesProps, Platform } from "../types/games";
 
-const SelectGames = ({
+const ActionsGames = ({
   setGames,
   gamesArray,
   games,
@@ -85,4 +85,4 @@ const SelectGames = ({
   );
 };
 
-export default SelectGames;
+export default ActionsGames;

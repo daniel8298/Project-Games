@@ -3,6 +3,7 @@ type Image = {
   radius?: string;
   wid?: string;
   hei?: string;
+  margin?: string;
 };
 
 export const Select = styled.select`
@@ -20,6 +21,7 @@ export const Image = styled.img<Image>`
   object-fit: cover;
   object-position: center;
   display: block;
+  margin: ${({ margin }) => margin};
 `;
 export const Checkbox = styled.input`
   margin: 0 10px 0 30px;

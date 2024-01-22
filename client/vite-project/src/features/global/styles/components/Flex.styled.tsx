@@ -37,9 +37,4 @@ export const ContainerWithFlex = styled.div<Container>`
   background-color: ${({ background }) => background};
   border-radius: ${({ radius }) => radius};
   margin: ${({ margin }) => margin};
-
-  /* & > div,
-  & > ul {
-    flex: 1;
-  } */
 `;

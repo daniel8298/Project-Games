@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     background: ${({ theme }) => theme.colors.body};
-    color: hsl(192, 100%, 9%);
+    color: hsl(0, 0%, 0%);
     font-family: sans-serif;
     font-size: large;
     /* margin: 0; */
