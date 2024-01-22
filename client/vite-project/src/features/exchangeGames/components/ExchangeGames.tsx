@@ -70,11 +70,12 @@ const ExchangeGamesPage = ({ userGames, userExchange }: GamesProps) => {
           <SelectGames
             gamesArray={gamesExchangeUser}
             setGames={setGamesExchangeUser}
-            games={userGames}
+            games={userExchange}
             platforms={platforms}
           />
 
           <CardExchangeUser
+            email={userExchange[0]?.email.split("@")[0]}
             games={gamesExchangeUser}
             handleGameDelete={handleGameDeleteAdmin}
           />
@@ -90,11 +91,15 @@ const ExchangeGamesPage = ({ userGames, userExchange }: GamesProps) => {
           radius="15px"
           margin="20px"
         >
-          <CardUser games={gamesUser} handleGameDelete={handleGameDeleteUser} />
+          <CardUser
+            email={userGames[0]?.email.split("@")[0]}
+            games={gamesUser}
+            handleGameDelete={handleGameDeleteUser}
+          />
           <SelectGames
             gamesArray={gamesUser}
             setGames={setGamesUser}
-            games={userExchange}
+            games={userGames}
             platforms={platforms}
           />
         </ContainerWithFlex>

@@ -12,7 +12,7 @@ const getGamesByUserId = createAsyncThunk(
           gamesByUserIdId: userId,
         },
       });
-      console.log("Success");
+
       return data.gamesByUserId;
     } catch (error) {
       console.error("Error connecting to the game server");

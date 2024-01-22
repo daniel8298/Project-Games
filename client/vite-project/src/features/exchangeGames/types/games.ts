@@ -19,5 +19,6 @@ export type GamesProps = {
 
 export type GamesPropsDelete = {
   games: GameInterface[];
+  email: string;
   handleGameDelete: (id: string) => void;
 };

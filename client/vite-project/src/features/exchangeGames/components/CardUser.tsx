@@ -7,7 +7,7 @@ import { Logo } from "../../global/styles/components/Header.styled";
 import { Checkbox, Image } from "../styles/Exchange.styled";
 import { GamesPropsDelete } from "../types/games";
 
-const CardUser = ({ games, handleGameDelete }: GamesPropsDelete) => {
+const CardUser = ({ email, games, handleGameDelete }: GamesPropsDelete) => {
   return (
     <StyledCard>
       <Image
@@ -17,7 +17,7 @@ const CardUser = ({ games, handleGameDelete }: GamesPropsDelete) => {
         src="https://www.svgrepo.com/show/382101/male-avatar-boy-face-man-user.svg"
         alt="user"
       />
-      <h3>Me: {}</h3>
+      <h3>Me: {email}</h3>
       <HorizontalLine />
       <br />
       <div>
