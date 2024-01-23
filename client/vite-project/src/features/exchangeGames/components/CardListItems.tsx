@@ -4,6 +4,7 @@ import { ContainerWithFlex } from "../../global/styles/components/Flex.styled";
 import { Logo } from "../../global/styles/components/Header.styled";
 import { Checkbox } from "../styles/Exchange.styled";
 import GameInterface from "../../games/interfaces/GameInterface";
+import { TitleH4 } from "../../global/styles/components/Title";
 
 type CardListItemsProps = {
   games: GameInterface[];
@@ -14,8 +15,7 @@ const CardListItems: FC<CardListItemsProps> = ({ games, handleGameDelete }) => {
   return (
     <>
       <HorizontalLine />
-      {/* <div> */}
-      {/* <TitleH4>Games For Exchange</TitleH4> */}
+      {/* <div> */}0<TitleH4>Games For Exchange</TitleH4>
       {games.map((game) => (
         <div key={game._id}>
           <label>

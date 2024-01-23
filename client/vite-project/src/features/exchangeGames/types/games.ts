@@ -11,10 +11,9 @@ export type Platform = {
 };
 
 export type GamesProps = {
-  setGames: React.Dispatch<React.SetStateAction<GameInterface[]>>;
+  setGamesArray: React.Dispatch<React.SetStateAction<GameInterface[]>>;
   gamesArray: GameInterface[];
   games: GameInterface[];
-  platforms: Platform[];
 };
 
 export type GamesPropsDelete = {

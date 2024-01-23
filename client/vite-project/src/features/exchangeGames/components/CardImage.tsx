@@ -1,11 +1,16 @@
 import { FC } from "react";
 import { TitleH3 } from "../../global/styles/components/Title";
 import { Image } from "../styles/Exchange.styled";
-type CardImageProps = { url: string; user: string; email: string };
+import { ContainerWithFlex } from "../../global/styles/components/Flex.styled";
+type CardImageProps = { url: string; userName: string; email: string };
 
-const CardImage: FC<CardImageProps> = ({ url, user, email }) => {
+const CardImage: FC<CardImageProps> = ({ url, userName, email }) => {
   return (
-    <div>
+    <ContainerWithFlex
+      display="flex"
+      alignitems="center"
+      flexdirection="column"
+    >
       <Image
         radius="50%"
         hei="200px"
@@ -15,9 +20,9 @@ const CardImage: FC<CardImageProps> = ({ url, user, email }) => {
         margin="15px 0"
       />
       <TitleH3>
-        {user}: {email}
+        {userName}: {email}
       </TitleH3>
-    </div>
+    </ContainerWithFlex>
   );
 };
 

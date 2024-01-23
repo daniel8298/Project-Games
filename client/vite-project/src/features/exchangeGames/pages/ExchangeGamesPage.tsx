@@ -16,8 +16,8 @@ const ExchangeGamesPage = () => {
   );
 
   useEffect(() => {
-    dispatch(getGamesByUserId("6"));
-    dispatch(getGamesByAnotherUserId("7"));
+    dispatch(getGamesByUserId("1"));
+    dispatch(getGamesByAnotherUserId("2"));
   }, []);
 
   if (pending) return <SpinnerComponent />;
