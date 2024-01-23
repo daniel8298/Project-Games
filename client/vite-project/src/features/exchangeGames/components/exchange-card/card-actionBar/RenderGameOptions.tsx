@@ -1,6 +1,6 @@
-import GameInterface from "../../games/interfaces/GameInterface";
+import GameInterface from "../../../../games/interfaces/GameInterface";
 
-export const renderGameOptions = (
+export const RenderGameOptions = (
   games: GameInterface[],
   selectedPlatform: string
 ) => {
@@ -17,4 +17,4 @@ export const renderGameOptions = (
   return [];
 };
 
-export default renderGameOptions;
+export default RenderGameOptions;

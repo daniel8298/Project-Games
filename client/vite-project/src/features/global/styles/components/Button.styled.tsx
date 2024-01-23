@@ -12,7 +12,7 @@ export const Button = styled.button<ButtonProps>`
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
-  padding: 7px 10px;
+  padding: 12px 38px;
   margin: 5px;
   background-color: ${({ bg }) => bg || "skyblue"};
   color: ${({ color }) => color || "#333"};

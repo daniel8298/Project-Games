@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { HorizontalLine } from "../../global/styles/components/Card.styled";
-import { ContainerWithFlex } from "../../global/styles/components/Flex.styled";
-import { Logo } from "../../global/styles/components/Header.styled";
-import { Checkbox } from "../styles/Exchange.styled";
-import GameInterface from "../../games/interfaces/GameInterface";
-import { TitleH4 } from "../../global/styles/components/Title";
+import { HorizontalLine } from "../../../global/styles/components/Card.styled";
+import { ContainerWithFlex } from "../../../global/styles/components/Flex.styled";
+import { Logo } from "../../../global/styles/components/Header.styled";
+import { Checkbox } from "../../styles/Exchange.styled";
+import GameInterface from "../../../games/interfaces/GameInterface";
+import { TitleH4 } from "../../../global/styles/components/Title";
 
 type CardListItemsProps = {
   games: GameInterface[];

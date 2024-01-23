@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Button } from "../../global/styles/components/Button.styled";
-import { FlexSelectAndButton, Select } from "../styles/Exchange.styled";
-import { GamesProps } from "../types/games";
+import { Button } from "../../../../global/styles/components/Button.styled";
+import { FlexSelectAndButton, Select } from "../../../styles/Exchange.styled";
+import { GamesProps } from "../../../types/games";
 
-import renderGameOptions from "../hooks/renderGameOptions";
-import { platforms } from "../db/games";
-import renderPlatformOptions from "../hooks/renderPlatformOptions";
-import { ContainerWithFlex } from "../../global/styles/components/Flex.styled";
+import renderGameOptions from "./RenderGameOptions";
+import { platforms } from "../../../db/games";
+import renderPlatformOptions from "./RenderPlatformOptions";
+import { ContainerWithFlex } from "../../../../global/styles/components/Flex.styled";
 
-const ActionsGames = ({ setGamesArray, gamesArray, games }: GamesProps) => {
+const CardActionBar = ({ setGamesArray, gamesArray, games }: GamesProps) => {
   const [selectedPlatform, setSelectedPlatform] = useState("");
   const [selectedGame, setSelectedGame] = useState("");
 
@@ -61,4 +61,4 @@ const ActionsGames = ({ setGamesArray, gamesArray, games }: GamesProps) => {
   );
 };
 
-export default ActionsGames;
+export default CardActionBar;

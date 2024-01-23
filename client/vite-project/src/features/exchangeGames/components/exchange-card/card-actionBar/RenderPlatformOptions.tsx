@@ -1,7 +1,7 @@
-import GameInterface from "../../games/interfaces/GameInterface";
-import { Platform } from "../types/games";
+import GameInterface from "../../../../games/interfaces/GameInterface";
+import { Platform } from "../../../types/games";
 
-const renderPlatformOptions = (
+const RenderPlatformOptions = (
   games: GameInterface[],
   platforms: Platform[]
 ) => {
@@ -15,4 +15,4 @@ const renderPlatformOptions = (
     </option>
   ));
 };
-export default renderPlatformOptions;
+export default RenderPlatformOptions;

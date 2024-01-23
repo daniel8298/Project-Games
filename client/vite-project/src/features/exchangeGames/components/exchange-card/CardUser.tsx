@@ -1,7 +1,7 @@
-import GameInterface from "../../games/interfaces/GameInterface";
-import { ContainerWithFlex } from "../../global/styles/components/Flex.styled";
-import ActionsGames from "./ActionsGames";
-import CardImage from "./CardImage";
+import GameInterface from "../../../games/interfaces/GameInterface";
+import { ContainerWithFlex } from "../../../global/styles/components/Flex.styled";
+import CardActionBar from "./card-actionBar/CardActionBar";
+import CardImage from "./card-head/CardImage";
 import CardListItems from "./CardListItems";
 import { FC, useState } from "react";
 
@@ -21,7 +21,7 @@ const CardUser: FC<CardUserProps> = ({ games, userName, url }) => {
           userName={userName}
           url={url}
         />
-        <ActionsGames
+        <CardActionBar
           gamesArray={gamesUserArray}
           setGamesArray={setGamesUserArray}
           games={games}

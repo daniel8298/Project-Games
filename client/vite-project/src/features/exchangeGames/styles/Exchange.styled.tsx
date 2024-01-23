@@ -12,7 +12,7 @@ export const Select = styled.select`
   margin: 17px;
   height: 58px;
   width: 159px;
-  padding: 4px;
+  padding: 2px;
 `;
 export const Image = styled.img<Image>`
   border-radius: ${({ radius }) => radius};
