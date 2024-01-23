@@ -15,7 +15,7 @@ const CardListItems: FC<CardListItemsProps> = ({ games, handleGameDelete }) => {
   return (
     <>
       <HorizontalLine />
-      {/* <div> */}0<TitleH4>Games For Exchange</TitleH4>
+      <TitleH4>Games For Exchange</TitleH4>
       {games.map((game) => (
         <div key={game._id}>
           <label>
