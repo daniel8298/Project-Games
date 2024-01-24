@@ -1,18 +1,24 @@
+import { useAppSelector } from "../../../../store/hooks";
 import GameInterface from "../../../games/interfaces/GameInterface";
 import { ContainerWithFlex } from "../../../global/styles/components/Flex.styled";
 import CardActionBar from "./card-actionBar/CardActionBar";
 import CardImage from "./card-head/CardImage";
 import CardListItems from "./CardListItems";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
 type CardUserProps = { games: GameInterface[]; userName: string; url: string };
 
 const CardUser: FC<CardUserProps> = ({ games, userName, url }) => {
+  const gameUser = useAppSelector((store) => store.exchangeGames.userSwapId);
   const [gamesUserArray, setGamesUserArray] = useState<GameInterface[]>([]);
   const handleGameDeleteUser = (id: string) => {
     const updatedGames = gamesUserArray.filter((game) => game._id !== id);
     setGamesUserArray(updatedGames);
   };
+
+  // useEffect(() =>{
+
+  // },[])
   return (
     <>
       <ContainerWithFlex display="flex" flexwrap="wrap" justifycontent="center">

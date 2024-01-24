@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import GameDetailsCard from "../components/GameDetails/GameDetailsCard";
 import getGame from "../services/getGame";
+import { ContainerWithFlex } from "../../global/styles/components/Flex.styled";
 
 const GameDetailsPage = () => {
   const { gameId } = useParams();
@@ -21,9 +22,9 @@ const GameDetailsPage = () => {
   if (error) navigate("/notFound");
 
   return (
-    <>
-      <GameDetailsCard game={game} />;
-    </>
+    <ContainerWithFlex>
+      <GameDetailsCard game={game} />
+    </ContainerWithFlex>
   );
 };
 export default GameDetailsPage;

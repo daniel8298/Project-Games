@@ -2,8 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { QUERY_GAMES_BY_USERID } from "../../../services/apollo/queries";
 import client from "../../../apollo/apolloApi";
 
-const getGamesByAnotherUserId = createAsyncThunk(
-  "gamesFromUser/getGamesByAnotherUserId",
+const getGamesByUserSwapId = createAsyncThunk(
+  "gamesFromUser/getGamesByUserSwapId",
   async (userId: string) => {
     try {
       const { data } = await client.query({
@@ -21,4 +21,4 @@ const getGamesByAnotherUserId = createAsyncThunk(
   }
 );
 
-export default getGamesByAnotherUserId;
+export default getGamesByUserSwapId;

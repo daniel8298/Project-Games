@@ -23,6 +23,18 @@ export const Image = styled.img<Image>`
   display: block;
   margin: ${({ margin }) => margin};
 `;
+export const ImageCard = styled.img`
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;
+  object-position: center;
+`;
+
+export const ImageContainer = styled.div`
+  height: 30%;
+  overflow: hidden;
+`;
 export const Checkbox = styled.input`
   margin: 0 10px 0 30px;
 `;

@@ -1,24 +1,15 @@
-import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { useAppSelector } from "../../../store/hooks";
 import ExchangeGames from "../components/ExchangeGames";
 import SpinnerComponent from "../../global/spinner/components/WaitingComponent";
 import NotFoundPage from "../../global/layout/NotFoundPage/NotFoundPage";
-import getGamesByUserId from "../services/getGamesByUserId";
-import getGamesByAnotherUserId from "../services/getGamesByAnotherUserId";
+import useGamesByUserSwapId from "../hooks/useGamesByUserSwapId";
+import useGamesByUserId from "../hooks/useGamesByUserId";
 
 const ExchangeGamesPage = () => {
-  const dispatch = useAppDispatch();
-  const { error, pending, gamesFromUser } = useAppSelector(
-    (store) => store.exchangeGames
-  );
-  const { gamesFromAnotherUser } = useAppSelector(
-    (store) => store.exchangeGames
-  );
-
-  useEffect(() => {
-    dispatch(getGamesByUserId("6"));
-    dispatch(getGamesByAnotherUserId("7"));
-  }, []);
+  const { userSwapId } = useAppSelector((store) => store.exchangeGames);
+  const { error, pending, gamesFromUserSwap } =
+    useGamesByUserSwapId(userSwapId);
+  const { gamesFromUser } = useGamesByUserId("1");
 
   if (pending) return <SpinnerComponent />;
   if (error) return <NotFoundPage />;
@@ -27,7 +18,7 @@ const ExchangeGamesPage = () => {
     <>
       <ExchangeGames
         userGames={gamesFromUser}
-        userSwapGames={gamesFromAnotherUser}
+        userSwapGames={gamesFromUserSwap}
       />
     </>
   );

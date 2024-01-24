@@ -12,13 +12,14 @@ import { CardActionsButtonStyle, cardStyle } from "../helpers/cardStyles";
 // import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 // import DiscountComponent from "../../cart/utils/DiscountComponent";
 import GameInterface from "../interfaces/GameInterface";
+import { useAppDispatch } from "../../../store/hooks";
+import { gamesUserId } from "../../exchangeGames/exchangeGamesSlice";
 
 type GamesProps = {
   game: GameInterface;
 };
 export const GameCard: FC<GamesProps> = ({ game }) => {
   const navigate = useNavigate();
-  // const dispatch = useAppDispatch();
 
   return (
     <Card sx={cardStyle}>
