@@ -1,4 +1,5 @@
 import GameInterface from "../../../../games/interfaces/GameInterface";
+import { StyledOption } from "../../../styles/Exchange.styled";
 import { Platform } from "../../../types/games";
 
 const RenderPlatformOptions = (
@@ -10,9 +11,9 @@ const RenderPlatformOptions = (
   );
 
   return platformsWithGames.map((platform) => (
-    <option key={platform.id} value={platform.name}>
+    <StyledOption key={platform.id} value={platform.name}>
       {platform.name}
-    </option>
+    </StyledOption>
   ));
 };
 export default RenderPlatformOptions;

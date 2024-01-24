@@ -34,7 +34,7 @@ const HeaderNavigate = () => {
         alt="controller"
         width={"50px"}
         onClick={() => {
-          navigate("/store/exchangeGamesPage");
+          navigate("/");
         }}
       />
       <FlexButtons>

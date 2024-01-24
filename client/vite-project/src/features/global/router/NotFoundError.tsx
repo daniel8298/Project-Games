@@ -1,13 +1,14 @@
-import { CssBaseline, Typography } from "@mui/material";
 import { FC } from "react";
+import { TitleH1 } from "../styles/components/Title";
 
-type NotFoundErrorProps = {message  :string};
+type NotFoundErrorProps = { message: string };
 
-const NotFoundError: FC<NotFoundErrorProps> = ({message}) => {
-  return <>
-  <CssBaseline />
-  <Typography variant="h5">{message}</Typography>
-  </>;
+const NotFoundError: FC<NotFoundErrorProps> = ({ message }) => {
+  return (
+    <>
+      <TitleH1>{message}</TitleH1>
+    </>
+  );
 };
 
 export default NotFoundError;

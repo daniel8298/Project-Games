@@ -10,7 +10,7 @@ const HeaderLogOutButton = () => {
   return (
     <Button
       onClick={() => {
-        navigate("/store/home");
+        navigate("/");
         removeToken();
         dispatch(setDecodedToken(null));
       }}

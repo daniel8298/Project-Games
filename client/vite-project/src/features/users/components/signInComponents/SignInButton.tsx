@@ -49,7 +49,7 @@ const SignInButton: FC<SignInUpButtonInterface> = ({
                 );
 
                 setTimeout(() => {
-                  navigate("/store/home");
+                  navigate("/");
                 }, 2000);
               } else {
                 showAlert(

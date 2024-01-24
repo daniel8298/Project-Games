@@ -17,21 +17,13 @@ const GameDetailsPage = () => {
     dispatch(getGame(gameId as string));
   }, [game]);
   if (pending) return <SpinnerComponent />;
-  if (!game) return <NotFoundError message="game in not found" />;
-  if (error) navigate("/store/notFound");
+  if (!game) return <NotFoundError message="Game a not found!" />;
+  if (error) navigate("/notFound");
 
   return (
-    <Container>
-      <CssBaseline />
-      <Box
-        sx={{
-          position: "fixed",
-          top: "100px",
-          right: "20px",
-        }}
-      ></Box>
+    <>
       <GameDetailsCard game={game} />;
-    </Container>
+    </>
   );
 };
 export default GameDetailsPage;

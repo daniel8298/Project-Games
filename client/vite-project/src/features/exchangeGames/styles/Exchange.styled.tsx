@@ -38,3 +38,7 @@ export const FlexSelectAndButton = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const StyledOption = styled.option`
+  font-size: 22px;
+`;

@@ -7,11 +7,11 @@ const getGame = createAsyncThunk("games/getGame", async (gameId: string) => {
     const { data } = await client.query({
       query: QUERY_GAME,
       variables: {
-        getGameId: gameId,
+        gameId: gameId,
       },
     });
     console.log("Success");
-    return data.getGame;
+    return data.game;
   } catch (error) {
     console.error("Error connecting to the game server");
     throw error;

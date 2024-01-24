@@ -7,7 +7,7 @@ const HeaderSignInButton = () => {
   return (
     <Button
       onClick={() => {
-        navigate("/store/signin");
+        navigate("/signin");
       }}
     >
       Sign In

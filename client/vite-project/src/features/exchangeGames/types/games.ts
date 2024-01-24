@@ -3,7 +3,7 @@ import GameInterface from "../../games/interfaces/GameInterface";
 export type Game = {
   id: string;
   name: string;
-  platform: string; // הוספת שדה פלטפורמה לטיפוס משחק
+  platform: string;
 };
 export type Platform = {
   id: string;

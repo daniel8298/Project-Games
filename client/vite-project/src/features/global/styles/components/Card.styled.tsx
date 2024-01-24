@@ -11,10 +11,14 @@ export const StyledCard = styled.div<StyledCard>`
   align-items: center;
   margin: 15px 50px;
   background-color: ${({ background }) => background};
-
   display: flex;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   border-radius: 15px;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const HorizontalLine = styled.hr`

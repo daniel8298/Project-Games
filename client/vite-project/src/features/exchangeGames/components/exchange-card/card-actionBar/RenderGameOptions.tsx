@@ -1,4 +1,5 @@
 import GameInterface from "../../../../games/interfaces/GameInterface";
+import { StyledOption } from "../../../styles/Exchange.styled";
 
 export const RenderGameOptions = (
   games: GameInterface[],
@@ -9,9 +10,9 @@ export const RenderGameOptions = (
       (game) => game.platforms === selectedPlatform
     );
     return filteredGames.map((game) => (
-      <option key={game._id} value={game.name}>
+      <StyledOption key={game._id} value={game.name}>
         {game.name}
-      </option>
+      </StyledOption>
     ));
   }
   return [];

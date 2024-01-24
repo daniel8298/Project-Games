@@ -17,7 +17,7 @@ export const Platforms = () => {
 
   const onSubmit = (platform: string) => {
     dispatch(filterGames({ games, platform }));
-    navigate(`/store/search`);
+    navigate(`/search`);
   };
   return (
     <ImageList

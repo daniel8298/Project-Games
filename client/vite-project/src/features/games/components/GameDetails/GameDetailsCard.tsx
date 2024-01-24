@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import GameInterface from "../../interfaces/GameInterface";
 import { Box, Container, CssBaseline } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 // import DiscountComponent from "../../../cart/utils/DiscountComponent";
 interface GameCardProps {
@@ -16,6 +17,7 @@ interface GameCardProps {
 }
 const GameDetailsCard: React.FC<GameCardProps> = ({ game }) => {
   // const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <Box>
@@ -60,6 +62,7 @@ const GameDetailsCard: React.FC<GameCardProps> = ({ game }) => {
         </Typography> */}
           <Button
             variant="contained"
+            onClick={() => navigate("/exchangeGamesPage")}
             // onClick={() => {
             //   dispatch(addToCart(product));
             // }}

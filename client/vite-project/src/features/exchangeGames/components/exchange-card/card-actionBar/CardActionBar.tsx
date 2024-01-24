@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Button } from "../../../../global/styles/components/Button.styled";
-import { FlexSelectAndButton, Select } from "../../../styles/Exchange.styled";
+import {
+  FlexSelectAndButton,
+  Select,
+  StyledOption,
+} from "../../../styles/Exchange.styled";
 import { GamesProps } from "../../../types/games";
 
 import renderGameOptions from "./RenderGameOptions";
@@ -37,7 +41,7 @@ const CardActionBar = ({ setGamesArray, gamesArray, games }: GamesProps) => {
     <ContainerWithFlex display="flex" alignitems="center">
       <FlexSelectAndButton>
         <Select onChange={handlePlatformChange} value={selectedPlatform}>
-          <option value="">SELECT PLATFORM</option>
+          <StyledOption value="">SELECT PLATFORM</StyledOption>
           {renderPlatformOptions(games, platforms)}
         </Select>
         <Select
@@ -45,7 +49,7 @@ const CardActionBar = ({ setGamesArray, gamesArray, games }: GamesProps) => {
           value={selectedGame}
           disabled={!selectedPlatform}
         >
-          <option value="">SELECT GAME</option>
+          <StyledOption value="">SELECT GAME</StyledOption>
           {renderGameOptions(games, selectedPlatform)}
         </Select>
         <Button

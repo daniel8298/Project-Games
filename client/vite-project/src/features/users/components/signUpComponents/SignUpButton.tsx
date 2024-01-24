@@ -31,7 +31,7 @@ const SignUpButton: FC<SignInUpButtonInterface> = ({
       showAlert("success", "Sign up successful! Redirecting to sign in...");
 
       setTimeout(() => {
-        navigate("/store/signin");
+        navigate("/signin");
       }, 5000);
     }
   };

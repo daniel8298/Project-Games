@@ -6,22 +6,30 @@ type ButtonProps = {
 };
 
 export const Button = styled.button<ButtonProps>`
-  border-radius: 50px;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
   font-size: 16px;
-  font-weight: 700;
-  padding: 12px 38px;
-  margin: 5px;
-  background-color: ${({ bg }) => bg || "skyblue"};
-  color: ${({ color }) => color || "#333"};
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #2196f3;
+  color: #ffffff;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.5s ease;
+  border-radius: 10px;
 
   &:hover {
-    opacity: 0.9;
-    transform: scale(0.9);
-    background-color: blue;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: black;
+    background-color: greenyellow;
   }
+
+  &:active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

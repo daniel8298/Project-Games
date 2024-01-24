@@ -24,7 +24,7 @@ export const GameCard: FC<GamesProps> = ({ game }) => {
     <Card sx={cardStyle}>
       <Card
         onClick={() => {
-          navigate(`/store/home/${game._id}`);
+          navigate(`/${game._id}`);
         }}
         sx={{ height: "350px", position: "relative" }}
       >
