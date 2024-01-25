@@ -19,6 +19,7 @@ export const SignInRequest = createAsyncThunk(
       return data.SignInUser;
     } catch (error) {
       return apiThunk.rejectWithValue(error);
+      // throw error;
     }
   }
 );

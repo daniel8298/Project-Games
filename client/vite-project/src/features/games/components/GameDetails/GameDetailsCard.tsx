@@ -11,16 +11,15 @@ import GameInterface from "../../interfaces/GameInterface";
 import { Box, Container, CssBaseline } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../../store/hooks";
-import { gamesUserSwapId } from "../../../exchangeGames/exchangeGamesSlice";
 import { ContainerWithFlex } from "../../../global/styles/components/Flex.styled";
 import { CardStyle } from "../../../global/styles/components/Card.styled";
 import {
-  Image,
   ImageCard,
   ImageContainer,
 } from "../../../exchangeGames/styles/Exchange.styled";
-import { P, TitleH2, TitleH4 } from "../../../global/styles/components/Title";
+import { P, TitleH4 } from "../../../global/styles/components/Title";
 import { Button } from "../../../global/styles/components/Button.styled";
+import { gameUserSwap } from "../../../exchangeGames/exchangeGamesSlice";
 interface GameCardProps {
   game: GameInterface;
 }
@@ -44,7 +43,7 @@ const GameDetailsCard: React.FC<GameCardProps> = ({ game }) => {
       <ContainerWithFlex padding="10px" display="flex" justifycontent="center">
         <Button
           onClick={() => {
-            dispatch(gamesUserSwapId(game.userId));
+            dispatch(gameUserSwap(game));
             navigate("/exchangeGamesPage");
           }}
         >

@@ -8,8 +8,8 @@ interface InitialState {
   error: string | SerializedError;
   gamesFromUser: GameInterface[];
   gamesFromUserSwap: GameInterface[];
-  userId: string;
-  userSwapId: string;
+  user: string;
+  userSwap: GameInterface;
 }
 
 const initialState: InitialState = {
@@ -17,20 +17,20 @@ const initialState: InitialState = {
   error: "",
   gamesFromUser: [],
   gamesFromUserSwap: [],
-  userId: "",
-  userSwapId: "",
+  user: "",
+  userSwap: {} as GameInterface,
 };
 
 export const exchangeGamesSlice = createSlice({
   name: "gamesFromUser",
   initialState,
   reducers: {
-    gamesUserId(state, action: PayloadAction<string>) {
-      state.userId = action.payload;
+    gameUser(state, action: PayloadAction<string>) {
+      state.user = action.payload;
       return state;
     },
-    gamesUserSwapId(state, action: PayloadAction<string>) {
-      state.userSwapId = action.payload;
+    gameUserSwap(state, action: PayloadAction<GameInterface>) {
+      state.userSwap = action.payload;
     },
   },
   extraReducers(builder) {
@@ -64,5 +64,5 @@ export const exchangeGamesSlice = createSlice({
     });
   },
 });
-export const { gamesUserId, gamesUserSwapId } = exchangeGamesSlice.actions;
+export const { gameUser, gameUserSwap } = exchangeGamesSlice.actions;
 export default exchangeGamesSlice.reducer;

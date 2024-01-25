@@ -6,9 +6,10 @@ import useGamesByUserSwapId from "../hooks/useGamesByUserSwapId";
 import useGamesByUserId from "../hooks/useGamesByUserId";
 
 const ExchangeGamesPage = () => {
-  const { userSwapId } = useAppSelector((store) => store.exchangeGames);
-  const { error, pending, gamesFromUserSwap } =
-    useGamesByUserSwapId(userSwapId);
+  const { userSwap } = useAppSelector((store) => store.exchangeGames);
+  const { error, pending, gamesFromUserSwap } = useGamesByUserSwapId(
+    userSwap.userId
+  );
   const { gamesFromUser } = useGamesByUserId("1");
 
   if (pending) return <SpinnerComponent />;
