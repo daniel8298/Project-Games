@@ -1,6 +1,6 @@
 interface TokenInterface {
   id: number;
-  email: string;
+  firstName: string;
   isAdmin: boolean;
   iat?: number;
 }

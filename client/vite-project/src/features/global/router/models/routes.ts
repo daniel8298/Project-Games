@@ -1,6 +1,6 @@
 export const ROUTS = {
   home: "/",
-  exchangeGames: "exchangeGamesPage",
+  exchangeGames: "exchangeGamesPage/:userId",
   signin: "signin",
   signup: "signup",
   search: "search",

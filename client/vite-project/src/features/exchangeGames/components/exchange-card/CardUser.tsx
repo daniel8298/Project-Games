@@ -9,10 +9,8 @@ import { FC, useState } from "react";
 type CardUserProps = { games: GameInterface[]; userName: string; url: string };
 
 const CardUser: FC<CardUserProps> = ({ games, userName, url }) => {
-  const gameUser = useAppSelector((store) => store.exchangeGames.userSwap);
-  const [gamesUserArray, setGamesUserArray] = useState<GameInterface[]>([
-    gameUser,
-  ]);
+  // const gameUser = useAppSelector((store) => store.exchangeGames.userSwap);
+  const [gamesUserArray, setGamesUserArray] = useState<GameInterface[]>([]);
   const handleGameDeleteUser = (id: string) => {
     const updatedGames = gamesUserArray.filter((game) => game._id !== id);
     setGamesUserArray(updatedGames);

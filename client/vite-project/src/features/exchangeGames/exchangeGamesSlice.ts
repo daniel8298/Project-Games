@@ -1,4 +1,4 @@
-import { PayloadAction, SerializedError, createSlice } from "@reduxjs/toolkit";
+import { SerializedError, createSlice } from "@reduxjs/toolkit";
 import GameInterface from "../games/interfaces/GameInterface";
 import getGamesByUserId from "./services/getGamesByUserId";
 import getGamesByUserSwapId from "./services/getGamesByUserSwapId";
@@ -24,15 +24,7 @@ const initialState: InitialState = {
 export const exchangeGamesSlice = createSlice({
   name: "gamesFromUser",
   initialState,
-  reducers: {
-    gameUser(state, action: PayloadAction<string>) {
-      state.user = action.payload;
-      return state;
-    },
-    gameUserSwap(state, action: PayloadAction<GameInterface>) {
-      state.userSwap = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers(builder) {
     builder.addCase(getGamesByUserId.pending, (state) => {
       state.pending = true;
@@ -64,5 +56,4 @@ export const exchangeGamesSlice = createSlice({
     });
   },
 });
-export const { gameUser, gameUserSwap } = exchangeGamesSlice.actions;
 export default exchangeGamesSlice.reducer;

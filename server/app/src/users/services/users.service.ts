@@ -44,13 +44,13 @@ export class UsersService {
         where: { email },
       });
       if (!userFromDb) throw new Error('Invalid email or password');
-      const { id, isAdmin, password: passwordFromDb } = userFromDb;
+      const { id, firstName, isAdmin, password: passwordFromDb } = userFromDb;
       const isPasswordValid = comparePassword(
         passwordFromClient,
         passwordFromDb,
       );
       if (!isPasswordValid) throw new Error('Invalid email or password');
-      const token = generateAuthToken({ id, email, isAdmin });
+      const token = generateAuthToken({ id, firstName, isAdmin });
       return token;
     } catch (error) {
       return Promise.reject(error);

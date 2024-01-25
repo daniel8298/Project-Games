@@ -52,6 +52,9 @@ export class Game {
 
   @Prop({ required: true })
   email: string;
+
+  @Prop({ required: true })
+  userName: string;
 }
 
 export const GameSchema = SchemaFactory.createForClass(Game);

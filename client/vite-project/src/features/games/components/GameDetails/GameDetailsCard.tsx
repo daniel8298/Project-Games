@@ -19,12 +19,11 @@ import {
 } from "../../../exchangeGames/styles/Exchange.styled";
 import { P, TitleH4 } from "../../../global/styles/components/Title";
 import { Button } from "../../../global/styles/components/Button.styled";
-import { gameUserSwap } from "../../../exchangeGames/exchangeGamesSlice";
+
 interface GameCardProps {
   game: GameInterface;
 }
 const GameDetailsCard: React.FC<GameCardProps> = ({ game }) => {
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   return (
@@ -43,8 +42,7 @@ const GameDetailsCard: React.FC<GameCardProps> = ({ game }) => {
       <ContainerWithFlex padding="10px" display="flex" justifycontent="center">
         <Button
           onClick={() => {
-            dispatch(gameUserSwap(game));
-            navigate("/exchangeGamesPage");
+            navigate(`/exchangeGamesPage/${game.userId}`);
           }}
         >
           {" "}
