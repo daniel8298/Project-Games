@@ -28,13 +28,13 @@ export const HorizontalLine = styled.hr`
 
 export const CardStyle = styled.div`
   margin: 25px 0;
-  background-color: #777575;
+  background-color: #d8d4d4;
   min-height: 500px;
   height: auto;
   width: 550px;
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: "0 4px 8px rgba(0, 0, 0, 0.7)";
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transition: transform 0.3s ease-in-out; // Add a smooth transition for the transform property
   display: flex;
   flex-direction: column;

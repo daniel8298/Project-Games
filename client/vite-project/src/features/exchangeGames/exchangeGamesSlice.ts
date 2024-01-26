@@ -8,8 +8,6 @@ interface InitialState {
   error: string | SerializedError;
   gamesFromUser: GameInterface[];
   gamesFromUserSwap: GameInterface[];
-  user: string;
-  userSwap: GameInterface;
 }
 
 const initialState: InitialState = {
@@ -17,8 +15,6 @@ const initialState: InitialState = {
   error: "",
   gamesFromUser: [],
   gamesFromUserSwap: [],
-  user: "",
-  userSwap: {} as GameInterface,
 };
 
 export const exchangeGamesSlice = createSlice({

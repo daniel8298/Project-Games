@@ -18,6 +18,7 @@ export class RegisterUser {
   @Matches(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/, {
     message: 'Invalid email address format',
   })
+  @IsNotEmpty()
   @Field()
   email: string;
 
@@ -25,6 +26,7 @@ export class RegisterUser {
     message:
       'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one special character.',
   })
+  @IsNotEmpty()
   @Field()
   password: string;
 

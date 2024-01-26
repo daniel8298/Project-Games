@@ -29,7 +29,7 @@ type GameType {
   imageAlt: String!
   address: GameAddress!
   userId: String!
-  email: String!
+  userName: String!
 }
 
 type MessageType {
@@ -103,10 +103,10 @@ input LoginUser {
 }
 
 input UpdateUser {
-  firstName: String!
-  lastName: String!
-  email: String!
-  password: String!
+  firstName: String
+  lastName: String
+  email: String
+  password: String
 }
 
 type Subscription {

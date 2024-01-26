@@ -35,8 +35,6 @@ export class GameType {
   @Field()
   userId: String;
   @Field()
-  email: String;
-  @Field()
   userName: String;
 }
 

@@ -70,16 +70,10 @@ export class GamesResolver {
     @Context() context,
   ) {
     try {
-      const { id: userId, email: userEmail, name: userName } = context.req.user;
-
-      // const { req } = context;
-      // const userId = req.user.id;
-      // const userEmail = req.user.email;
-      // const userName = req.user.name;
+      const { id: userId, firstName: userName } = context.req.user;
 
       const newGame = await this.gamesService.create(
         userId,
-        userEmail,
         userName,
         inputGame,
       );

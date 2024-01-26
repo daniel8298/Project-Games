@@ -16,26 +16,27 @@ const CardListItems: FC<CardListItemsProps> = ({ games, handleGameDelete }) => {
     <>
       <HorizontalLine />
       <TitleH4>Games For Exchange</TitleH4>
-      {games.map((game) => (
-        <div key={game._id}>
-          <label>
-            <ContainerWithFlex
-              display="flex"
-              alignitems="center"
-              margin="15px 0"
-            >
-              <Logo
-                src="../../../../public/delete-svgrepo-com.svg"
-                alt="delete"
-                width={"25px"}
-                onClick={() => handleGameDelete(game._id)}
-              />
-              <Checkbox type="checkbox" />
-              {game.name}
-            </ContainerWithFlex>
-          </label>
-        </div>
-      ))}
+      {games &&
+        games.map((game) => (
+          <div key={game?._id}>
+            <label>
+              <ContainerWithFlex
+                display="flex"
+                alignitems="center"
+                margin="15px 0"
+              >
+                <Logo
+                  src="../../../../public/delete-svgrepo-com.svg"
+                  alt="delete"
+                  width={"25px"}
+                  onClick={() => handleGameDelete(game._id)}
+                />
+                <Checkbox type="checkbox" />
+                {game?.name}
+              </ContainerWithFlex>
+            </label>
+          </div>
+        ))}
     </>
   );
 };

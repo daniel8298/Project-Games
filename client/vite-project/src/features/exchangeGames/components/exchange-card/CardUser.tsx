@@ -1,16 +1,26 @@
-import { useAppSelector } from "../../../../store/hooks";
 import GameInterface from "../../../games/interfaces/GameInterface";
 import { ContainerWithFlex } from "../../../global/styles/components/Flex.styled";
 import CardActionBar from "./card-actionBar/CardActionBar";
 import CardImage from "./card-head/CardImage";
 import CardListItems from "./CardListItems";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
-type CardUserProps = { games: GameInterface[]; userName: string; url: string };
+type CardUserProps = {
+  games: GameInterface[];
+  user: string;
+  url: string;
+  selectedGame?: GameInterface;
+};
 
-const CardUser: FC<CardUserProps> = ({ games, userName, url }) => {
-  // const gameUser = useAppSelector((store) => store.exchangeGames.userSwap);
+const CardUser: FC<CardUserProps> = ({ games, user, url, selectedGame }) => {
   const [gamesUserArray, setGamesUserArray] = useState<GameInterface[]>([]);
+
+  useEffect(() => {
+    if (selectedGame && gamesUserArray.length === 0) {
+      setGamesUserArray([selectedGame]);
+    }
+  }, []);
+
   const handleGameDeleteUser = (id: string) => {
     const updatedGames = gamesUserArray.filter((game) => game._id !== id);
     setGamesUserArray(updatedGames);
@@ -19,11 +29,7 @@ const CardUser: FC<CardUserProps> = ({ games, userName, url }) => {
   return (
     <>
       <ContainerWithFlex display="flex" flexwrap="wrap" justifycontent="center">
-        <CardImage
-          email={games[0]?.email.split("@")[0]}
-          userName={userName}
-          url={url}
-        />
+        <CardImage userName={games[0]?.userName} user={user} url={url} />
         <CardActionBar
           gamesArray={gamesUserArray}
           setGamesArray={setGamesUserArray}

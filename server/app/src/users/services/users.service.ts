@@ -94,6 +94,10 @@ export class UsersService {
         where: { id },
       });
       if (!userToUpdate) throw new Error(`User with id ${id} not found`);
+      if (userToUpdate.password) {
+        const encryptedPassword = generateUserPassword(userToUpdate.password);
+        if (encryptedPassword) userInput.password = encryptedPassword;
+      }
       this.usersRepository.merge(userToUpdate, userInput);
       const updatedUser = await this.usersRepository.save(userToUpdate);
       if (!updatedUser) throw new Error(`User with id ${id} not update`);

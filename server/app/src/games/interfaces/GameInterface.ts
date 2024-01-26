@@ -23,6 +23,5 @@ export interface GameInterface {
   address: Address;
   platforms: Platform;
   userId: string;
-  email: string;
   userName: string;
 }

@@ -1,11 +1,12 @@
 import { InputType, Field } from '@nestjs/graphql';
-import { Matches } from 'class-validator';
+import { IsNotEmpty, Matches } from 'class-validator';
 
 @InputType()
 export class LoginUser {
   @Matches(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/, {
     message: 'Invalid email address format',
   })
+  @IsNotEmpty()
   @Field()
   email: string;
 
@@ -13,6 +14,7 @@ export class LoginUser {
     message:
       'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one special character.',
   })
+  @IsNotEmpty()
   @Field()
   password: string;
 }

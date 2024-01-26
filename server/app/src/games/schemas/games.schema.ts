@@ -3,7 +3,7 @@ import { Date, HydratedDocument } from 'mongoose';
 
 export type GameDocument = HydratedDocument<Game>;
 
-@Schema()
+@Schema({ _id: false })
 export class Address {
   @Prop({ required: true })
   areaCountry: string;
@@ -49,9 +49,6 @@ export class Game {
 
   @Prop({ required: true })
   userId: string;
-
-  @Prop({ required: true })
-  email: string;
 
   @Prop({ required: true })
   userName: string;

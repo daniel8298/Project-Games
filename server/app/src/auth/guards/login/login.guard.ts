@@ -20,6 +20,7 @@ export class LoginGuard implements CanActivate {
 
       const userInfo = verifyToken(token) as TokenInterface;
       if (!userInfo) throw new Error();
+      console.log(userInfo);
 
       req.user = userInfo;
 

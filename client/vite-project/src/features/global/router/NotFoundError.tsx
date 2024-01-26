@@ -1,14 +1,14 @@
-import { FC } from "react";
-import { TitleH1 } from "../styles/components/Title";
+// import { FC } from "react";
+// import { TitleH1 } from "../styles/components/Title";
 
-type NotFoundErrorProps = { message: string };
+// type NotFoundErrorProps = { message: string };
 
-const NotFoundError: FC<NotFoundErrorProps> = ({ message }) => {
-  return (
-    <>
-      <TitleH1>{message}</TitleH1>
-    </>
-  );
-};
+// const NotFoundError: FC<NotFoundErrorProps> = ({ message }) => {
+//   return (
+//     <>
+//       <TitleH1>{message}</TitleH1>
+//     </>
+//   );
+// };
 
-export default NotFoundError;
+// export default NotFoundError;

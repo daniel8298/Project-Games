@@ -18,7 +18,7 @@ export const QUERY_GAME = gql`
         street
       }
       userId
-      email
+      userName
     }
   }
 `;
@@ -41,7 +41,7 @@ export const QUERY_GAMES = gql`
         street
       }
       userId
-      email
+      userName
     }
   }
 `;
@@ -64,7 +64,7 @@ export const QUERY_GAMES_BY_USERID = gql`
         street
       }
       userId
-      email
+      userName
     }
   }
 `;
