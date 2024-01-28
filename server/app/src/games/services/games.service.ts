@@ -51,7 +51,9 @@ export class GamesService {
   async create(userId: string, userName: string, gameInput: GameInputCreate) {
     try {
       const newGame = new this.gameModel({ userId, userName, ...gameInput });
+
       const gameCreated = await newGame.save();
+
       if (!gameCreated) throw new Error('Game its a not created');
       await this.cacheManager.reset();
       return newGame;
